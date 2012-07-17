@@ -5,6 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <theme href="minimal.html" if-path="@@edit-tile" />
+    <theme href="frontpage.html" css:if-content="body.template-frontpage-view" />
     
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
@@ -50,24 +51,24 @@
         <copy attributes="href" css:content='#portal-logo' css:theme="#logo" />
 
         <!-- Site actions -->
-        <!--<replace css:content="#portal-siteactions li" css:theme-children="#global-nav" />-->
-        <drop css:theme="#banner-wrapper"
-            css:if-not-content="#banner-viewlet" />
-        <replace css:content="#banner-viewlet" css:theme-children="#banner-wrapper"
-            css:if-content="#banner-viewlet" />
-        <copy attributes="action" css:content="#portal-searchbox form"
-            css:theme="#portal-searchbox" />
+
+        <replace css:content="#portal-searchbox"
+            css:theme-children="#searchbox" />
 
         <!-- Global navigation -->
         <replace css:content="#portal-globalnav li" css:theme-children="#main-nav" />
 
         <!-- Breadcrumbs -->
-        <replace css:content-children='#portal-breadcrumbs' css:theme-children='#breadcrumbs' />
+        <replace css:content-children='#portal-breadcrumbs' css:theme-children='#pathbar' />
 
         <!-- Document Content -->
         <replace css:content-children="#content" css:theme-children="#main-content" />
         <!--<before css:content="#edit-bar" css:theme="#document-content" />-->
         <before css:content=".portalMessage" css:theme="#document-content" />
+
+        <replace css:content="#banner-gallery" css:theme="#gallery"
+            css:if-content="body.template-frontpage-view" />
+
         <!-- Columns -->
         <!--<replace css:content-children="#portal-column-one > *" css:theme-children="#column-one" />-->
         <!--<replace css:content-children="#portal-column-two > *" css:theme-children="#sidebar" />-->

@@ -9,5 +9,13 @@
             // enhancement.
             return;
         }
+        $(".bannertabs").tabs('.bannerbar > div.banner', {
+            effect: 'fade',
+            fadeOutSpeed: 1000,
+            rotate: true
+        }).slideshow({
+            autoplay: true,
+            interval: 6000
+        });
     });
 }(jQuery));

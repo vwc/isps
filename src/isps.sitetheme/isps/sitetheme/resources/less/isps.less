@@ -24,7 +24,7 @@ header.main-nav {
                     background: url(../img/logo.png) no-repeat 0px 0px transparent;
                     display: block;
                     .size(89px, 156px);
-                    padding: 0px @baseLineHeight @baseLineHeight 0px;
+                    padding: 0px @baseLineHeight * 1.5 @baseLineHeight 0px;
                     text-indent: -3000px;
                     overflow: hidden;
                 }
@@ -43,6 +43,9 @@ header.main-nav {
             }
         }
     }
+    .nav {
+        margin-top: @baseLineHeight;
+    }
     .navbar .nav > li > a {
         float: none;
         // Vertically center the text given @navbarHeight
@@ -53,6 +56,9 @@ header.main-nav {
         text-decoration: none;
         text-transform: uppercase;
         text-shadow: 0 0 0 rgba(0,0,0,.25);
+        &:first-child {
+            padding-left: 0px;
+        }
     }
     .navbar .nav .active > a,
     .navbar .nav .active > a:hover {
@@ -76,6 +82,7 @@ header.main-nav {
 
 #hero-bar {
     background: @white;
+    padding-top: @baseLineHeight;
 }
 
 .box {
@@ -103,6 +110,80 @@ header.main-nav {
         overflow:hidden;
     }
 }
+
+#banner-gallery {
+    .bannerbar {
+        position:relative;
+        .size(380px, 940px);
+        margin:0px;
+        cursor:pointer;
+        background: @ispBlue;
+        .banner {
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+            margin:0px;
+            padding:0;
+            .size(380px, 940px);
+            font-size:@baseFontSize;
+            .row-fixed {
+                margin-left: 0px;
+            }
+            .banner-content {
+                height: 360px;
+            }
+            .banner-caption {
+                margin: @baseLineHeight 0px 0px @baseLineHeight;
+                color: @white;
+                width: 320px;
+            }
+            .banner-info {
+                padding: @baseLineHeight;
+                color: @white;
+                .banner-more {
+                    position: relative;
+                    display: block;
+                    top: 200px;
+                    left: 0px;
+                    a {
+                        font-size: 32px;
+                        color: @white;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+    /* tabs (those little circles below slides) */
+    .bannertabs {
+        //clear:both;
+        background: @white;
+        background: rgba(255,255,255,.50);
+        display: block;
+        position: relative;
+        top: -20px;
+        height: 20px;
+        padding-left: 340px;
+        //z-index: @zindexModal;
+        a {
+            .square(12px);
+            .border-radius(50%);
+            float:left;
+            margin:3px;
+            background:@ispBlue;
+            display:block;
+            font-size:1px;
+            &:hover {
+                background:@ispRed;
+            }
+            &.current {
+                background:@ispRed;
+            }
+        }
+    }
+}
+
 
 #portal-footer {
     margin-top: @baseLineHeight;

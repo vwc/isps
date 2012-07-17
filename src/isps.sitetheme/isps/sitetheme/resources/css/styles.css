@@ -4886,7 +4886,7 @@ header.main-nav .navbar .navbar-inner .container #logo {
   display: block;
   width: 156px;
   height: 89px;
-  padding: 0px 18px 18px 0px;
+  padding: 0px 27px 18px 0px;
   text-indent: -3000px;
   overflow: hidden;
 }
@@ -4900,6 +4900,9 @@ header.main-nav .navbar .navbar-inner .container .navbar-text h3 {
   color: #4066aa;
   font-size: 16px;
 }
+header.main-nav .nav {
+  margin-top: 18px;
+}
 header.main-nav .navbar .nav > li > a {
   float: none;
   padding: 0px 10px 11px;
@@ -4908,6 +4911,9 @@ header.main-nav .navbar .nav > li > a {
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
+}
+header.main-nav .navbar .nav > li > a:first-child {
+  padding-left: 0px;
 }
 header.main-nav .navbar .nav .active > a,
 header.main-nav .navbar .nav .active > a:hover {
@@ -4928,6 +4934,7 @@ header.main-nav .navbar .divider-vertical {
 }
 #hero-bar {
   background: #ffffff;
+  padding-top: 18px;
 }
 .box {
   margin-bottom: 18px;
@@ -4953,6 +4960,82 @@ header.main-nav .navbar .divider-vertical {
   display: block;
   text-indent: -4000px;
   overflow: hidden;
+}
+#banner-gallery {
+  /* tabs (those little circles below slides) */
+
+}
+#banner-gallery .bannerbar {
+  position: relative;
+  width: 940px;
+  height: 380px;
+  margin: 0px;
+  cursor: pointer;
+  background: #4066aa;
+}
+#banner-gallery .bannerbar .banner {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  padding: 0;
+  width: 940px;
+  height: 380px;
+  font-size: 13px;
+}
+#banner-gallery .bannerbar .banner .row-fixed {
+  margin-left: 0px;
+}
+#banner-gallery .bannerbar .banner .banner-content {
+  height: 360px;
+}
+#banner-gallery .bannerbar .banner .banner-caption {
+  margin: 18px 0px 0px 18px;
+  color: #ffffff;
+  width: 320px;
+}
+#banner-gallery .bannerbar .banner .banner-info {
+  padding: 18px;
+  color: #ffffff;
+}
+#banner-gallery .bannerbar .banner .banner-info .banner-more {
+  position: relative;
+  display: block;
+  top: 200px;
+  left: 0px;
+}
+#banner-gallery .bannerbar .banner .banner-info .banner-more a {
+  font-size: 32px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+#banner-gallery .bannertabs {
+  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  position: relative;
+  top: -20px;
+  height: 20px;
+  padding-left: 340px;
+}
+#banner-gallery .bannertabs a {
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  margin: 3px;
+  background: #4066aa;
+  display: block;
+  font-size: 1px;
+}
+#banner-gallery .bannertabs a:hover {
+  background: #c76745;
+}
+#banner-gallery .bannertabs a.current {
+  background: #c76745;
 }
 #portal-footer {
   margin-top: 18px;
