@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isps.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+    <div class="page-header">
+      <h1 tal:content="context/Title">Title inserted here</h1>
+    </div>
+
+    <p class="lead" tal:condition="context/Description"
+      tal:content="context/Description" />
+
+    <div class="well">
+      <h4>Banner Overlay Text</h4>
+      <div tal:content="structure context/text/output" />
+    </div>
+
+    <img tal:define="scales context/@@images"
+      tal:replace="structure python: scales.tag('image', scale='mini')"
+      />
+    
+    <h5>Banner Link</h5>
+
+    <div tal:condition="context/project">
+      <h5>Target project</h5>
+      <h6 tal:content="context/project/to_object/Title" />
+      <a href="" tal:define="target_url context/project/to_object/absolute_url"
+        tal:attributes="href target_url">
+        <i class="icon-link" />
+        <span i18n:translate="">Show target project</span></a>
+    </div>
+
+    <div tal:condition="context/information">
+      <h5>Related Content</h5>
+      <h6 tal:content="context/information/to_object/Title" />
+      <a href="" tal:define="target_url context/information/to_object/absolute_url"
+        tal:attributes="href target_url">
+        <i class="icon-link" />
+        <span i18n:translate="">Show target content</span></a>
+    </div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

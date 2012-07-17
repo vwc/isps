@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isps.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+
+  <div class="page-header">
+    <h1>Frontpage View</h1>
+  </div>
+
+  <section id="banner-gallery"
+    tal:condition="view/has_banners">
+    <tal:banners tal:define="banners view/banners">
+      <div class="bannerbar">
+        <tal:block tal:repeat="item banners">
+          <div class="banner"
+            tal:define="item_obj item/getObject;
+                        scales item_obj/@@images;
+                        picture python: scales.scale('image', width=620, height=350);">
+            <div class="row-fluid">
+              <div class="span8">
+                <div class="banner-content" 
+                  tal:attributes="style string:background:url(${picture/url}) no-repeat 100% 100% scroll">
+                  <div class="banner-caption">
+                    <span tal:replace="item/Title" />
+                  </div>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="banner-info">
+                  <h2 tal:content="item/Title" />
+                  <p tal:content="item/Description" />
+                  <div class="banner-more">
+                    <a href="" tal:attributes="href item/getURL">
+                      Mehr</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tal:block>
+      </div>
+      <div class="bannertabs">
+        <tal:tabnav tal:repeat="tab banners">
+          <a href="#"
+            tal:define="tab_id tab/getId;"
+            tal:attributes="href python:'#' + tab_id"></a>
+        </tal:tabnav>
+      </div>
+    </tal:banners>
+  </section>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
