@@ -27,6 +27,7 @@
         </div>
       </div>
     </header>
+
     <header class="main-nav">
     <div class="navbar">
       <div class="navbar-inner">
@@ -36,17 +37,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#" id="logo">ISP Scholz</a>
+          <a class="pull-left" href="#" id="logo">ISP Scholz</a>
+          <div class="navbar-text">
+            <form class="form-search pull-right">
+              <input type="text" class="input-medium search-query" />
+              <input type="submit" class="btn" value="Search" />
+            </form>
+            <h1>ISP Scholz Beratende Ingenieure AG</h1>
+            <h3>München &ndash; Leipzig &ndash; Weimar &ndash; Landshut</h3>
+          </div>
           <div class="nav-collapse pull-right">
             <ul class="nav">
               <li><a href="#">Section One</a></li>
-              <li><a href="#">Section Two</a></li>
+              <li class="divider-vertical"></li>
+              <li class="active"><a href="#">Section Two</a></li>
+              <li class="divider-vertical"></li>
               <li><a href="#">Section Three</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
+      <div class="container" id="pathbar">
+        <ul class="breadcrumb">
+          <li><a href="">Startseite</a> <span class="divider icon-chevron-right"></span></li>
+          <li><a href="">Section</a> <span class="divider icon-chevron-right"></span></li>
+          <li class="active">Subsection</li>
+        </ul>
+      </div>
     </header>
 
     <section class="container">
@@ -70,11 +88,26 @@
       </div>
     </section> <!-- /container -->
 
+    <section id="contact-bar">
+      <a href="#contact">Kontakt</a>
+    </section>
+
     <footer>
-      <div class="container">
-          <p>&copy; 2012 ISP Scholz All rights reserved
-            / <a href="/impressum">Impressum</a>
-          </p>
+      <div class="container" id="portal-footer">
+        <div class="row-fixed">
+          <div class="span8">
+          <p>&copy; 2012 ISP Scholz AG</p>
+          </div>
+          <div class="span4">
+            <div class="pull-right">
+              <ul class="nav">
+                <li><a href="/jobs">Jobs</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="/impressum">Impressum</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

@@ -1,2 +1,142 @@
 // Main Stylesheet for application specific overrides
 
+body {
+    background: @grayLighter;
+}
+
+.make-some-noise {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
+}
+
+header.main-nav {
+    padding-top: @baseLineHeight;
+    .navbar {
+        margin-bottom: 0px;
+        .navbar-inner {
+            min-height: @navbarHeight * 2;
+            background: transparent;
+            .border-radius(0px);
+            .box-shadow(0 0 0);
+            .container {
+                #grid > .core > .span(@gridColumns);
+                border-bottom: 1px solid @grayLight;
+                #logo {
+                    background: url(../img/logo.png) no-repeat 0px 0px transparent;
+                    display: block;
+                    .size(89px, 156px);
+                    padding: 0px @baseLineHeight @baseLineHeight 0px;
+                    text-indent: -3000px;
+                    overflow: hidden;
+                }
+                .navbar-text {
+                    h1 {
+                        font-weight: normal;
+                        color: @ispBlue;
+                        font-size: 28px;
+                    }
+                    h3 {
+                        font-weight: normal;
+                        color: @ispBlue;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .navbar .nav > li > a {
+        float: none;
+        // Vertically center the text given @navbarHeight
+        @elementHeight: 20px;
+        padding: 0px 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+        line-height: 19px;
+        color: @navbarLinkColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-shadow: 0 0 0 rgba(0,0,0,.25);
+    }
+    .navbar .nav .active > a,
+    .navbar .nav .active > a:hover {
+        color: @navbarLinkColorActive;
+        text-decoration: none;
+        background: transparent;
+    }
+    .navbar .divider-vertical {
+      height: @navbarHeight / 2;
+      width: 1px;
+      margin: 0 9px;
+      overflow: hidden;
+      background-color: @ispBlue;
+      border-right: 1px solid @ispBlue;
+    }
+}
+
+#frontpage-content {
+    padding-top: @baseLineHeight;
+}
+
+#hero-bar {
+    background: @white;
+}
+
+.box {
+    margin-bottom: @baseLineHeight;
+    .box-header {
+        border-bottom: 1px solid @grayLight;
+        margin-bottom: @baseLineHeight;
+        h3 {
+            color: @ispBrown;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+    }
+}
+
+#contact-bar {
+    position:absolute;
+    top: 300px;
+    right: 0px;
+    a {
+        background:url(../img/contact-btn.jpg) no-repeat 0px 0px transparent;
+        .size(100px, 25px);
+        display: block;
+        text-indent: -4000px;
+        overflow:hidden;
+    }
+}
+
+#portal-footer {
+    margin-top: @baseLineHeight;
+    padding: @baseLineHeight / 2 0px 0px;
+    color: @ispBrown;
+    border: 0px solid @ispBrown;
+    border-width: 1px 0px;
+    p {
+        text-transform: uppercase;
+    }
+    .nav {
+        margin-bottom: 0px;
+        li {
+            display: block;
+            float: left;
+            a {
+                float: none;
+                // Vertically center the text given @navbarHeight
+                @elementHeight: 20px;
+                padding: 0px 10px 0px;
+                line-height: 19px;
+                color: @navbarLinkColor;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-shadow: 0 0 0 rgba(0,0,0,.25);
+            }
+        }
+    }
+    .divider-vertical {
+      height: @navbarHeight / 2;
+      width: 1px;
+      margin: 0 9px;
+      overflow: hidden;
+      background-color: @ispBlue;
+      border-right: 1px solid @ispBlue;
+    }
+}
