@@ -17,5 +17,8 @@
             autoplay: true,
             interval: 6000
         });
+        $('#infotabs').tabs('div.infopanes > div.infopane', {
+            tabs: 'li.infotab'
+        });
     });
 }(jQuery));

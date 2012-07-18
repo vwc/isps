@@ -4930,6 +4930,9 @@ header.main-nav .navbar .divider-vertical {
   background-color: #4066aa;
   border-right: 1px solid #4066aa;
 }
+header.main-nav #pathbar {
+  padding-top: 9px;
+}
 #frontpage-content {
   padding-top: 18px;
 }
@@ -4960,15 +4963,24 @@ header.main-nav .navbar .divider-vertical {
 }
 /* @end */
 /* @group LiveSearch */
-#LSResult {
+#portal-searchbox {
   position: relative;
+}
+#portal-searchbox .searchButton {
+  margin: 0px 0px 0px;
+  border-radius: 0 4px 4px 0;
+}
+#LSResult {
+  position: absolute;
+  z-index: 10000;
+  top: 40px;
   right: 0;
   background: White;
-  margin: -1.5em 0 0 -7em;
+  margin: 0 0 0 -7em;
 }
 #LSResult fieldset {
   padding: 1em 0 0;
-  border: 0.1em solid #ccc;
+  border: 4px solid #555555;
 }
 #livesearchLegend {
   background-color: #ccc;
@@ -5083,6 +5095,9 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
   display: none;
 }
 /* @end */
+#content-wrapper {
+  padding: 27px 0px;
+}
 #contact-bar {
   position: absolute;
   top: 300px;
@@ -5176,6 +5191,32 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 }
 #banner-gallery .bannertabs a.current {
   background: #c76745;
+}
+#infotabs .infotab {
+  border: 1px solid #555555;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #999999;
+  font-size: 40px;
+  line-height: 45px;
+  color: #ffffff;
+  width: 75px;
+  height: 75px;
+  list-style: none;
+  margin: 0px 10px 10px 0;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+#infotabs .infotab.current {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+#infotabs .infotab:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 #portal-footer {
   margin-top: 18px;

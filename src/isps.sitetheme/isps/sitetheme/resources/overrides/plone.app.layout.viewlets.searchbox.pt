@@ -8,11 +8,10 @@
           tal:attributes="action string:${navigation_root_url}/@@search;
                           id string:${search_input_id}_form;">
 
-        <div class="LSBox">
+        <div class="LSBox input-append">
         <label class="hiddenStructure"
                tal:attributes="for search_input_id"
                i18n:translate="text_search">Search Site</label>
-
         <input name="SearchableText"
                type="text"
                size="18"

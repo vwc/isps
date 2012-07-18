@@ -75,6 +75,9 @@ header.main-nav {
       background-color: @ispBlue;
       border-right: 1px solid @ispBlue;
     }
+    #pathbar {
+        padding-top: @baseLineHeight / 2;
+    }
 }
 
 #frontpage-content {
@@ -114,16 +117,26 @@ header.main-nav {
 
 /* @group LiveSearch */
 
-#LSResult {
+#portal-searchbox {
     position: relative;
+    .searchButton {
+        margin: 0px 0px 0px;
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+#LSResult {
+    position: absolute;
+    z-index: 10000;
+    top: 40px;
     right: 0;
     background: White;
-    margin: -1.5em 0 0 -7em;
+    margin: 0 0 0 -7em;
 }
 
 #LSResult fieldset {
     padding: 1em 0 0;
-    border: 0.1em solid #ccc;
+    border: 4px solid @gray;
 }
 
 #livesearchLegend {
@@ -247,6 +260,12 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 
 /* @end */
 
+// Content styles 
+
+#content-wrapper {
+    padding: @baseLineHeight * 1.5 0px;
+}
+
 
 #contact-bar {
     position:absolute;
@@ -338,6 +357,28 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
     }
 }
 
+#infotabs {
+    .infotab {
+        border: 1px solid @gray;
+        .border-radius(4px);
+        background: @grayLight;
+        font-size: 40px;
+        line-height: 45px;
+        color: @white;
+        .square(75px);
+        list-style: none;
+        margin: 0px 10px 10px 0;
+        text-align: center;
+        cursor: pointer;
+        .opacity(50);
+        &.current {
+            .opacity(100);
+        }
+        &:hover {
+            .opacity(100);
+        }
+    }
+}
 
 #portal-footer {
     margin-top: @baseLineHeight;
