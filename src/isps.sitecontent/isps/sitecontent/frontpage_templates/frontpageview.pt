@@ -26,18 +26,23 @@
             <div class="row-fluid">
               <div class="span8">
                 <div class="banner-content" 
-                  tal:attributes="style string:background:url(${picture/url}) no-repeat 100% 100% scroll">
+                  tal:attributes="style string:background:url(${picture/url}) no-repeat 0% 0% scroll">
                   <div class="banner-caption">
-                    <span tal:replace="item/Title" />
+                    <span tal:replace="structure item_obj/text/output" />
                   </div>
                 </div>
               </div>
               <div class="span4">
                 <div class="banner-info">
                   <h2 tal:content="item/Title" />
+                  <hr />
                   <p tal:content="item/Description" />
                   <div class="banner-more">
-                    <a href="" tal:attributes="href item/getURL">
+                    <a href="" tal:condition="item_obj/project"
+                      tal:attributes="href item_obj/project/to_object/absolute_url">
+                      Mehr</a>
+                    <a href="" tal:condition="not: item_obj/project"
+                      tal:attributes="href item/getURL">
                       Mehr</a>
                   </div>
                 </div>

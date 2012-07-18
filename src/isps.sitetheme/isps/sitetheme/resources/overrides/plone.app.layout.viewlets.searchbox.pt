@@ -26,7 +26,7 @@
                                id search_input_id"
                class="searchField" />
 
-        <input class="searchButton"
+        <input class="searchButton btn btn-primary"
                type="submit"
                value="Search"
                i18n:attributes="value label_search;" />

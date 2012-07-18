@@ -61,6 +61,7 @@ header.main-nav {
         }
     }
     .navbar .nav .active > a,
+    .navbar .nav .selected > a,
     .navbar .nav .active > a:hover {
         color: @navbarLinkColorActive;
         text-decoration: none;
@@ -98,6 +99,155 @@ header.main-nav {
     }
 }
 
+/* Collapsible elements in search_form */
+
+.collapsible .collapser.collapsed {
+    padding-right: 14px;
+    background: url('arrowRight.png') center right no-repeat;
+}
+
+.collapsible .collapser.expanded {
+    padding-right: 14px;
+    background: url('arrowDown.png') center right no-repeat;
+}
+/* @end */
+
+/* @group LiveSearch */
+
+#LSResult {
+    position: relative;
+    right: 0;
+    background: White;
+    margin: -1.5em 0 0 -7em;
+}
+
+#LSResult fieldset {
+    padding: 1em 0 0;
+    border: 0.1em solid #ccc;
+}
+
+#livesearchLegend {
+    background-color:#ccc;
+    padding:0.3em;
+}
+
+#LSResult .LSDescr {
+    font-size: 85%;
+    color: #666;
+}
+
+.LSRow,
+#LSNothingFound {
+    display: block;
+    padding: 0.5em 1em;
+    white-space: normal;
+    width:28em;
+}
+
+.LSHighlight {
+    background: #ddd;
+}
+
+/* @end */
+
+/* @group Search results page */
+
+fieldset#search-field {
+    border: none !important;
+    text-align: center;
+}
+input.searchPage {
+    font-size:200% !important;
+}
+#rss-subscription {
+    float: left;
+    line-height: 3em;
+}
+#search-results-bar .actionMenuContent {
+    margin-top: 1em;
+    padding: 0;
+}
+#search-filter {
+    background: #ddd;
+    margin: 0;
+    padding: 0;
+}
+#content #search-filter fieldset {
+    border: none !important;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+#content #search-filter legend {
+    background: transparent;
+    font-size: 1.1em;
+    padding: 0.5em 0.9em;
+    font-weight: bold;
+}
+#search-filter .field {
+    background: #eee;
+    padding: 1em 1.5em;
+    margin: 0;
+}
+#search-filter .field label {
+    font-weight: normal;
+}
+#search-filter .formControls {
+    text-align:center
+}
+#search-results-wrapper {
+    margin-top: 1em;
+}
+form.searchPage h1.documentFirstHeading {
+    font-weight:normal; 
+    letter-spacing:0;
+    float: left;
+    margin-right: 0.8em;
+}
+form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
+    background: transparent !important;
+}
+#search-results-bar > * {
+    float: left;
+}
+#searchResultsSort{ 
+    float:right;
+}
+#search-results-bar {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;    
+    padding: 1em 0;
+}
+#search-results-bar dl.actionMenu {
+    margin-bottom: 0;
+}
+#search-results-bar dd.actionMenuContent {
+    margin-left: 0;
+    padding-left: 0;
+}
+#search-results-bar dt.actionMenuHeader a {
+    border-bottom: none;
+}
+#search-results-bar dt.actionMenuHeader a::after {
+    content: " ▼";
+}
+#search-results {
+    padding: 1em;
+}
+.searchResults {
+    margin-top: 0;
+}
+#ajax-search-res {
+    display: none;
+}
+
+/* @end */
+
+
 #contact-bar {
     position:absolute;
     top: 300px;
@@ -114,7 +264,7 @@ header.main-nav {
 #banner-gallery {
     .bannerbar {
         position:relative;
-        .size(380px, 940px);
+        .size(320px, 940px);
         margin:0px;
         cursor:pointer;
         background: @ispBlue;
@@ -125,29 +275,32 @@ header.main-nav {
             left:0;
             margin:0px;
             padding:0;
-            .size(380px, 940px);
+            .size(320px, 940px);
             font-size:@baseFontSize;
             .row-fixed {
                 margin-left: 0px;
             }
             .banner-content {
-                height: 360px;
+                height: 300px;
             }
             .banner-caption {
-                margin: @baseLineHeight 0px 0px @baseLineHeight;
+                padding: @baseLineHeight 0px 0px @baseLineHeight;
                 color: @white;
                 width: 320px;
             }
             .banner-info {
                 padding: @baseLineHeight;
                 color: @white;
+                height: 280px;
                 .banner-more {
-                    position: relative;
+                    position: absolute;
                     display: block;
-                    top: 200px;
-                    left: 0px;
+                    bottom: 0px;
+                    right: 150px;
+                    .size(40px, 130px);
+                    background:url(../img/chevron-double.png) no-repeat 100% 0px transparent;
                     a {
-                        font-size: 32px;
+                        font-size: 24px;
                         color: @white;
                         text-transform: uppercase;
                     }
@@ -165,6 +318,7 @@ header.main-nav {
         top: -20px;
         height: 20px;
         padding-left: 340px;
+        width: 280px;
         //z-index: @zindexModal;
         a {
             .square(12px);
