@@ -15,12 +15,25 @@
       <div class="page-header">
         <h1 tal:content="context/Title">Title inserted here</h1>
       </div>
-      <div class="project-gallery">
-        <div class="project-img thumbnail">
+      <div class="project-img thumbnail"
+        id="image-wrapper">
           <img tal:define="scales context/@@images"
               tal:replace="structure python: scales.tag('image',
                            width=600, height=400, direction='down')"
             />
+      </div>
+      <div class="project-gallery" id="project-gallery">
+        <div class="items">
+          <div>
+            <img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf_t.jpg"
+              data-image-url="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf.jpg" />
+            <img src="http://farm4.static.flickr.com/3089/2796719087_c3ee89a730_t.jpg"
+              data-image-url="http://farm4.static.flickr.com/3089/2796719087_c3ee89a730.jpg" />
+            <img src="http://farm1.static.flickr.com/79/244441862_08ec9b6b49_t.jpg"
+              data-image-url="http://farm1.static.flickr.com/79/244441862_08ec9b6b49.jpg" />
+            <img src="http://farm1.static.flickr.com/28/66523124_b468cf4978_t.jpg"
+              data-image-url="http://farm1.static.flickr.com/28/66523124_b468cf4978.jpg" />
+          </div>
         </div>
       </div>
       <div tal:condition="context/text"
