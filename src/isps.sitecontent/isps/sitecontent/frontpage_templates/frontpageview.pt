@@ -61,6 +61,90 @@
     </tal:banners>
   </section>
 
+  <section class="container" id="frontpage-tabs">
+      <div class="row-fluid">
+        <div class="span6 infopanes">
+          <div class="infopane">
+            <h2>Beraten</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Planen</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Pr&uuml;fen</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Betreuen</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Entwickeln</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Steuern</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>&Uuml;berwachen</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+          <div class="infopane">
+            <h2>Begutachten</h2>
+            <div class="infopane-content">
+              <p>Info Tile inserted here</p>
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <h2>Unsere Leistungen</h2>
+          <ul id="infotabs">
+            <li class="infotab pull-left"><div class="infoicon icon1"></div>
+              <h5>Beraten</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon2"></div>
+              <h5>Planen</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon3"></div>
+              <h5>Pr&uuml;fen</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon4"></div>
+              <h5>Betreuen</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon5"></div>
+              <h5>Entwickeln</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon6"></div>
+              <h5>Steuern</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon7"></div>
+              <h5>&Uuml;berwachen</h5>
+            </li>
+            <li class="infotab pull-left"><div class="infoicon icon8"></div>
+              <h5>Begutachten</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </metal:content-core>
 </metal:main>
 

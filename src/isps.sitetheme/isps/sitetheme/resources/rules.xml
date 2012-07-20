@@ -69,6 +69,10 @@
         <replace css:content="#banner-gallery" css:theme="#gallery"
             css:if-content="body.template-frontpage-view" />
 
+        <replace css:content-children="#frontpage-tabs"
+            css:theme-children="#frontpage-content"
+            css:if-content="body.template-frontpage-view" />
+
         <!-- Columns -->
         <!--<replace css:content-children="#portal-column-one > *" css:theme-children="#column-one" />-->
         <!--<replace css:content-children="#portal-column-two > *" css:theme-children="#sidebar" />-->

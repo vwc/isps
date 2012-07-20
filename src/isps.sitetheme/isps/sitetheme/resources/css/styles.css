@@ -4882,7 +4882,7 @@ header.main-nav .navbar .navbar-inner .container {
   border-bottom: 1px solid #999999;
 }
 header.main-nav .navbar .navbar-inner .container #logo {
-  background: url(../img/logo.png) no-repeat 0px 0px transparent;
+  background: url(../img/sprite.png) no-repeat -200px -350px transparent;
   display: block;
   width: 156px;
   height: 89px;
@@ -5104,7 +5104,7 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
   right: 0px;
 }
 #contact-bar a {
-  background: url(../img/contact-btn.jpg) no-repeat 0px 0px transparent;
+  background: url(../img/sprite.png) no-repeat -100px -350px transparent;
   width: 25px;
   height: 100px;
   display: block;
@@ -5192,31 +5192,87 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 #banner-gallery .bannertabs a.current {
   background: #c76745;
 }
+#infotabs {
+  margin-top: 18px;
+}
 #infotabs .infotab {
-  border: 1px solid #555555;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background: #999999;
   font-size: 40px;
   line-height: 45px;
   color: #ffffff;
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 120px;
   list-style: none;
   margin: 0px 10px 10px 0;
   text-align: center;
   cursor: pointer;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
 }
-#infotabs .infotab.current {
-  opacity: 1;
-  filter: alpha(opacity=100);
+#infotabs .infotab h5 {
+  color: #555555;
 }
-#infotabs .infotab:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
+#infotabs .infotab .infoicon {
+  width: 85px;
+  height: 85px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(../img/sprite.png) no-repeat -18px -50px transparent;
+}
+#infotabs .infotab .infoicon.icon2 {
+  background-position: -135px -50px;
+}
+#infotabs .infotab .infoicon.icon3 {
+  background-position: -252px -50px;
+}
+#infotabs .infotab .infoicon.icon4 {
+  background-position: -370px -50px;
+}
+#infotabs .infotab .infoicon.icon5 {
+  background-position: -487px -50px;
+}
+#infotabs .infotab .infoicon.icon6 {
+  background-position: -606px -50px;
+}
+#infotabs .infotab .infoicon.icon7 {
+  background-position: -722px -50px;
+}
+#infotabs .infotab .infoicon.icon8 {
+  background-position: -843px -50px;
+}
+#infotabs .infotab.current .infoicon,
+#infotabs .infotab:hover .infoicon {
+  background-position: -18px -148px;
+}
+#infotabs .infotab.current .infoicon.icon2,
+#infotabs .infotab:hover .infoicon.icon2 {
+  background-position: -135px -148px;
+}
+#infotabs .infotab.current .infoicon.icon3,
+#infotabs .infotab:hover .infoicon.icon3 {
+  background-position: -253px -148px;
+}
+#infotabs .infotab.current .infoicon.icon4,
+#infotabs .infotab:hover .infoicon.icon4 {
+  background-position: -370px -148px;
+}
+#infotabs .infotab.current .infoicon.icon5,
+#infotabs .infotab:hover .infoicon.icon5 {
+  background-position: -487px -148px;
+}
+#infotabs .infotab.current .infoicon.icon6,
+#infotabs .infotab:hover .infoicon.icon6 {
+  background-position: -606px -148px;
+}
+#infotabs .infotab.current .infoicon.icon7,
+#infotabs .infotab:hover .infoicon.icon7 {
+  background-position: -722px -148px;
+}
+#infotabs .infotab.current .infoicon.icon8,
+#infotabs .infotab:hover .infoicon.icon8 {
+  background-position: -843px -148px;
+}
+#infotabs .infotab.current h5,
+#infotabs .infotab:hover h5 {
+  color: #c76745;
 }
 #portal-footer {
   margin-top: 18px;
