@@ -18,8 +18,8 @@
       <div class="project-img thumbnail"
         id="image-wrapper">
           <img tal:define="scales context/@@images"
-              tal:replace="structure python: scales.tag('image',
-                           width=600, height=400, direction='down')"
+            tal:replace="structure python: scales.tag('image',
+                         width=500, height=500, direction='down')"
             />
       </div>
       <div class="project-gallery" id="project-gallery">
