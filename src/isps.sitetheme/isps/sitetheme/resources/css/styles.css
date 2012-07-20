@@ -4952,6 +4952,13 @@ header.main-nav #pathbar {
   font-weight: normal;
   text-transform: uppercase;
 }
+#project-details {
+  border-left: 1px solid #555555;
+}
+#project-details .info-box {
+  border-bottom: 1px solid #555555;
+  padding: 9px 18px;
+}
 /* Collapsible elements in search_form */
 .collapsible .collapser.collapsed {
   padding-right: 14px;

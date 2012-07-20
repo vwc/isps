@@ -10,15 +10,62 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
 
-    <div class="page-header">
-      <h1 tal:content="context/Title">Title inserted here</h1>
-    </div>
-
-    <p class="lead" tal:content="context/Description" />
-
-    <div class="alert">
-      Project specific content will be inserted here
-    </div>
+  <section class="row-fixed">
+    <article class="span8">
+      <div class="page-header">
+        <h1 tal:content="context/Title">Title inserted here</h1>
+      </div>
+      <div class="project-gallery">
+        <div class="project-img thumbnail">
+          <img tal:define="scales context/@@images"
+              tal:replace="structure python: scales.tag('image',
+                           width=600, height=400, direction='down')"
+            />
+        </div>
+      </div>
+      <div tal:condition="context/text"
+        tal:content="structure context/text/output" />
+    </article>
+    <aside class="span4">
+      <div id="project-details">
+        <div class="info-box"
+          tal:condition="context/Description">
+          <h6>Projekt</h6>
+          <p class="lead" tal:content="context/Description" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/contractor">
+          <h6>Bauherr</h6>
+          <p tal:content="context/contractor" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/architect">
+          <h6>Entwurfsverfasser</h6>
+          <p tal:content="context/architect" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/planning_period">
+          <h6>Planungszeit</h6>
+          <p tal:content="context/planning_period" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/construction_period">
+          <h6>Bauzeit</h6>
+          <p tal:content="context/construction_period" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/construction_costs">
+          <h6>Kosten</h6>
+          <p tal:content="context/construction_costs" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/floor_space">
+          <h6>Floor Space</h6>
+          <p tal:content="context/floor_space" />
+        </div>
+      </div>
+    </aside>
+  </section>
     
   </metal:content-core>
 </metal:main>
