@@ -25,6 +25,14 @@
       <div class="project-gallery" id="project-gallery">
         <div class="items">
           <div>
+            <img tal:define="scales context/@@images;
+                             thumbnail python: scales.scale('image', width=100, height=100);
+                             original python: scales.scale('image', width=600, height=400);"
+              tal:condition="thumbnail"
+              tal:attributes="src thumbnail/url;
+                              width thumbnail/width;
+                              height thumbnail/height;
+                              data-image-url original/url" />
             <img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf_t.jpg"
               data-image-url="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf.jpg" />
             <img src="http://farm4.static.flickr.com/3089/2796719087_c3ee89a730_t.jpg"
