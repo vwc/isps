@@ -29,7 +29,7 @@
 
     <div tal:condition="context/project">
       <h5>Target project</h5>
-      <h6 tal:content="context/project/to_object/Title" />
+      <h6 tal:content="context/project/to_object/Title | nothing" />
       <a href="" tal:define="target_url context/project/to_object/absolute_url"
         tal:attributes="href target_url">
         <i class="icon-link" />
