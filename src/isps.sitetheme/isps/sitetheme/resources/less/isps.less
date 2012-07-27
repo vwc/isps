@@ -102,6 +102,9 @@ header.main-nav {
     }
 }
 
+#project-gallery {
+    margin: @baseLineHeight 0px;
+}
 
 #project-details {
     border-left: 1px solid @gray;
@@ -177,10 +180,16 @@ header.main-nav {
 
 fieldset#search-field {
     border: none !important;
-    text-align: center;
+    text-align: left;
 }
 input.searchPage {
-    font-size:200% !important;
+    font-size:20px;
+    line-height: 24px;
+    height: 26px;
+    &.searchButton {
+        margin: 0px;
+        line-height: 26px;
+    }
 }
 #rss-subscription {
     float: left;

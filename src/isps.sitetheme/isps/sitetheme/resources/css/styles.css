@@ -4952,6 +4952,9 @@ header.main-nav #pathbar {
   font-weight: normal;
   text-transform: uppercase;
 }
+#project-gallery {
+  margin: 18px 0px;
+}
 #project-details {
   border-left: 1px solid #555555;
 }
@@ -5011,10 +5014,16 @@ header.main-nav #pathbar {
 /* @group Search results page */
 fieldset#search-field {
   border: none !important;
-  text-align: center;
+  text-align: left;
 }
 input.searchPage {
-  font-size: 200% !important;
+  font-size: 20px;
+  line-height: 24px;
+  height: 26px;
+}
+input.searchPage.searchButton {
+  margin: 0px;
+  line-height: 26px;
 }
 #rss-subscription {
   float: left;
