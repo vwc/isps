@@ -1,5 +1,6 @@
 from five import grok
 from plone.directives import dexterity, form
+from plone.indexer import indexer
 
 from zope import schema
 from zope.schema.interfaces import IContextSourceBinder
@@ -27,6 +28,22 @@ class IContentPage(form.Schema, IImageScaleTraversable):
     """
     A basic content page with preview image
     """
+    image = NamedBlobImage(
+        title=_(u"Preview Image"),
+        description=_(u"Upload optional preview image used in listings and "
+                      u"search results"),
+        required=False,
+    )
+    text = RichText(
+        title=_(u"Main Text"),
+        required=True,
+    )
+
+
+@indexer(IContentPage)
+def searchableTextIndexer(obj):
+    return ' '.join([obj.Title(), obj.Description(), obj.text.output()])
+grok.global_adapter(searchableTextIndexer, name="SearchableText")
 
 
 class ContentPage(dexterity.Item):
