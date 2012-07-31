@@ -8,6 +8,7 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 from plone.app.contentlisting.interfaces import IContentListing
 from isps.sitecontent.project import IProject
+from isps.sitecontent.contentpage import IContentPage
 
 from isps.sitecontent import MessageFactory as _
 
@@ -22,7 +23,7 @@ class IPreviewFolder(form.Schema, IImageScaleTraversable):
         title=_(u"Preview Image"),
         description=_(u"Upload preview image that will be displayed inside "
                        "the dropdown menu"),
-        required=True,
+        required=False,
     )
 
 
@@ -39,16 +40,25 @@ class View(grok.View):
         self.has_projects = len(self.contained_projects()) > 0
 
     def contained_items(self):
-        context = aq_inner(self.context)
         if self.has_projects:
             return self.contained_projects()
         else:
-            return context.contentItems()
+            return self.contained_pages()
 
     def contained_projects(self):
         context = aq_inner(self.context)
         catalog = getToolByName(context, 'portal_catalog')
         results = catalog(object_provides=IProject.__identifier__,
+                          path=dict(query='/'.join(context.getPhysicalPath()),
+                                    depth=1),
+                          review_state='published')
+        resultlist = IContentListing(results)
+        return resultlist
+
+    def contained_pages(self):
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+        results = catalog(object_provides=IContentPage.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
                           review_state='published')

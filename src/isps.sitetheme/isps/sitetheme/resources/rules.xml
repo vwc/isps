@@ -12,7 +12,7 @@
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
         <notheme if="$ajax_load" />          
-        <theme href="theme.html" />
+        <theme href="fullscreen.html" />
         <!-- Add meta tags -->
         <drop theme="/html/head/meta" />
         
