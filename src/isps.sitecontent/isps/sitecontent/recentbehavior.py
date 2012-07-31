@@ -6,6 +6,8 @@ from plone.directives import form
 from plone.autoform.interfaces import IFormFieldProvider
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
+from Products.Five.utilities.marker import mark, erase
+
 from isps.sitecontent.contentpage import IContentPage
 
 from isps.sitecontent import MessageFactory as _
@@ -41,5 +43,10 @@ alsoProvides(IRecentEventBehavior, IFormFieldProvider)
 
 
 @grok.subscribe(IContentPage, IObjectModifiedEvent)
-def printMessage(obj, event):
-    print "Received event for", obj, "added to", event.newParent
+def applyRecentMarker(obj, event):
+    recent = obj.recent
+    if recent == True:
+        mark(obj, IRecentMarker)
+    else:
+        erase(obj, IRecentMarker)
+    obj.reindexObject(idxs=['object_provides'])
