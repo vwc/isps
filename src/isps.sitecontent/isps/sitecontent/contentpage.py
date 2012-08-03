@@ -19,6 +19,8 @@ from plone.app.textfield import RichText
 from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
+from Products.CMFPlone.utils import safe_unicode
+
 from isps.sitecontent import MessageFactory as _
 
 
@@ -42,7 +44,9 @@ class IContentPage(form.Schema, IImageScaleTraversable):
 
 @indexer(IContentPage)
 def searchableTextIndexer(obj):
-    return ' '.join([obj.Title(), obj.Description(), obj.text.output])
+    return ' '.join([safe_unicode(obj.Title()),
+                     obj.Description(),
+                     obj.text.output])
 grok.global_adapter(searchableTextIndexer, name="SearchableText")
 
 
