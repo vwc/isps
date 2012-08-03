@@ -36,7 +36,7 @@ class IRecentEventBehavior(form.Schema):
         title=_(u"Release Date"),
         description=_(u"Enter a date to provide chronological order for "
                       u"recent events and projects"),
-        required="False",
+        required=False,
     )
 
 alsoProvides(IRecentEventBehavior, IFormFieldProvider)
