@@ -114,6 +114,28 @@ header.main-nav {
     }
 }
 
+#sidebar {
+    border-left: 1px solid @gray;
+    .infobox {
+        border-bottom: 1px solid @gray;
+        padding: @baseLineHeight / 2 @baseLineHeight @baseLineHeight / 2 0;
+        margin: @baseLineHeight 0 @baseLineHeight @baseLineHeight;
+        h3, h4 {
+            color: @grayLight;
+        }
+        h3 {
+            text-transform: uppercase;
+        }
+        p {
+            font-size: @baseFontSize - 2;
+        }
+        .infobox-image {
+            .center-block();
+            margin-bottom: @baseLineHeight / 2;
+        }
+    }
+}
+
 
 /* Collapsible elements in search_form */
 

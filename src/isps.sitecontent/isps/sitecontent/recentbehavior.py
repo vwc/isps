@@ -9,6 +9,7 @@ from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 from Products.Five.utilities.marker import mark, erase
 
 from isps.sitecontent.contentpage import IContentPage
+from isps.sitecontent.project import IProject
 
 from isps.sitecontent import MessageFactory as _
 
@@ -44,6 +45,16 @@ alsoProvides(IRecentEventBehavior, IFormFieldProvider)
 
 @grok.subscribe(IContentPage, IObjectModifiedEvent)
 def applyRecentMarker(obj, event):
+    recent = obj.recent
+    if recent == True:
+        mark(obj, IRecentMarker)
+    else:
+        erase(obj, IRecentMarker)
+    obj.reindexObject(idxs=['object_provides'])
+
+
+@grok.subscribe(IProject, IObjectModifiedEvent)
+def applyRecentProjectMarker(obj, event):
     recent = obj.recent
     if recent == True:
         mark(obj, IRecentMarker)

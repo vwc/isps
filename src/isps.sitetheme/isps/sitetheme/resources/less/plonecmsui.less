@@ -444,7 +444,7 @@ input.datetime-widget {
 #archetypes-fieldname-title input {
     height: @baseLineHeight * 1.5;
     line-height: @baseLineHeight * 1.5;
-    font-size: @baseLineHeight;
+    font-size: @baseLineHeight * 1.25;
     font-weight: bold;
     width: 100%;
     color: @gray;
@@ -479,6 +479,11 @@ div.formHelp {
 input.context,
 input.standalone {
     .btn();
+}
+
+.fieldRequired,
+span.required {
+    display: inline-block;
 }
 
 /* @group Invisibles */

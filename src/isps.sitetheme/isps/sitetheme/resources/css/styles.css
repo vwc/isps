@@ -4893,7 +4893,7 @@ input.datetime-widget {
 #archetypes-fieldname-title input {
   height: 27px;
   line-height: 27px;
-  font-size: 18px;
+  font-size: 22.5px;
   font-weight: bold;
   width: 100%;
   color: #555555;
@@ -5008,6 +5008,10 @@ input.standalone.active {
 input.context:first-child,
 input.standalone:first-child {
   *margin-left: 0;
+}
+.fieldRequired,
+span.required {
+  display: inline-block;
 }
 /* @group Invisibles */
 .hiddenStructure {
@@ -5142,6 +5146,30 @@ header.main-nav #pathbar {
 #project-details .info-box {
   border-bottom: 1px solid #555555;
   padding: 9px 18px;
+}
+#sidebar {
+  border-left: 1px solid #555555;
+}
+#sidebar .infobox {
+  border-bottom: 1px solid #555555;
+  padding: 9px 18px 9px 0;
+  margin: 18px 0 18px 18px;
+}
+#sidebar .infobox h3,
+#sidebar .infobox h4 {
+  color: #999999;
+}
+#sidebar .infobox h3 {
+  text-transform: uppercase;
+}
+#sidebar .infobox p {
+  font-size: 11px;
+}
+#sidebar .infobox .infobox-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 9px;
 }
 /* Collapsible elements in search_form */
 .collapsible .collapser.collapsed {
