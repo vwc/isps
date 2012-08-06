@@ -182,8 +182,8 @@ a.historyComparePrevious span {
 
 /* Color differences between the two tab types */
 #content ul.formTabs {
-    background-color: #ddd;
-    border: 0.3em solid #ddd;
+    background: transparent;
+    border: 0em solid #ddd;
 }
 #edit-bar {
 }
@@ -209,9 +209,32 @@ a.historyComparePrevious span {
 #content ul.formTabs,
 #content-core ul.formTabs {
     display: block;
-    border-style: solid solid none solid;
+    border-style: none;
     margin-left: 0;
     .border-radius(4px);
+    .nav();
+    .nav-tabs();
+    background: transparent;
+    // Actual tabs (as links)
+    li > a {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      line-height: @baseLineHeight;
+      border: 1px solid transparent;
+      .border-radius(4px 4px 0 0);
+      &:hover {
+        border-color: @grayLighter @grayLighter #ddd;
+      }
+    }
+    // Active state, and it's :hover to override normal :hover
+    li.active > a,
+    li.active > a:hover {
+      color: @gray;
+      background-color: @white;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      cursor: default;
+    }
 }
 #content li.formTab,
 #content-core li.formTab {
@@ -396,12 +419,68 @@ dl.actionMenu.activated dd {
     -moz-border-radius-bottomright: 0.5em;
 }
 dl.actionMenu.activated dt a,
-dl.actionMenu.activated dd a,
+dl.actionMenu.activated dd a
 dl.actionMenu.activated dd div {
     margin: 0 0.25em;
 }
 
 /* @end */
+
+/* Form overrides */
+
+input[type="checkbox"] + label {
+    display: inline-block;
+    .ie7-inline-block();
+    margin-left: @baseLineHeight / 2;
+}
+
+input.datetime-widget {
+    width: auto;
+}
+
+/* Emulates the styling from the h1 tag */
+#content .field input[type="text"][name$=".title"],
+#form-widgets-IBasic-title,
+#archetypes-fieldname-title input {
+    height: @baseLineHeight * 1.5;
+    line-height: @baseLineHeight * 1.5;
+    font-size: @baseLineHeight;
+    font-weight: bold;
+    width: 100%;
+    color: @gray;
+}
+
+/* Emulates styling from the description's view */
+#content .field textarea[name$=".description"],
+#form-widgets-IBasic-description,
+#archetypes-fieldname-description textarea#description {
+    color:@gray;
+    font-size:1.25em;
+    font-weight: bold;
+    width: 100%;
+}
+
+#content-core label {
+    font-weight: bold;
+}
+
+div.field {
+    .control-group();
+}
+
+div.formHelp {
+    .help-block();
+}
+
+.formControls {
+    .form-actions();
+}
+
+input.context,
+input.standalone {
+    .btn();
+}
+
 /* @group Invisibles */
 
 .hiddenStructure {
