@@ -42,16 +42,18 @@ class IProject(form.Schema, IImageScaleTraversable):
         'details',
         label=_(u"Project Details"),
         fields=['contractor', 'architect', 'planning_period',
-                'construction_period', 'construction_costs', 'floor_space',
-                'floor_space_index', 'capacity', 'services']
+                'construction_period', 'construction_costs',
+                'floor_space_title', 'floor_space',
+                'floor_index_title', 'floor_space_index',
+                'capacity_title', 'capacity', 'services']
     )
     contractor = schema.TextLine(
         title=_(u"Building Contractor"),
-        required=True,
+        required=False,
     )
     architect = schema.TextLine(
         title=_(u"Architect"),
-        required=True,
+        required=False,
     )
     planning_period = schema.TextLine(
         title=_(u"Planning Period"),
@@ -65,12 +67,24 @@ class IProject(form.Schema, IImageScaleTraversable):
         title=_(u"Construction Costs"),
         required=False,
     )
+    floor_space_title = schema.TextLine(
+        title=_(u"Floor Space Title"),
+        required=False,
+    )
     floor_space = schema.TextLine(
         title=_(u"Floor Space"),
         required=False,
     )
+    floor_index_title = schema.TextLine(
+        title=_(u"Floor Index Title"),
+        required=False
+    )
     floor_space_index = schema.TextLine(
         title=_(u"Floor Space Index"),
+        required=False,
+    )
+    capacity_title = schema.TextLine(
+        title=_(u"Capacity title"),
         required=False,
     )
     capacity = schema.TextLine(
