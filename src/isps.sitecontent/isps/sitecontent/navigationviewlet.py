@@ -1,6 +1,7 @@
 from five import grok
 from Acquisition import aq_inner
 from zope.component import getMultiAdapter
+from zope.interface import Interface
 from plone.app.layout.viewlets.interfaces import IPortalHeader
 from Products.CMFCore.interfaces import IContentish
 from plone.app.layout.navigation.navtree import buildFolderTree
@@ -10,7 +11,7 @@ from Products.CMFPlone.browser.navtree import DefaultNavtreeStrategy
 
 class SiteNavigationViewlet(grok.Viewlet):
     grok.name('isps.sitecontent.SiteNavViewlet')
-    grok.context(IContentish)
+    grok.context(Interface)
     grok.require('zope2.View')
     grok.viewletmanager(IPortalHeader)
 
