@@ -1,0 +1,38 @@
+<tal:block>
+    <ul id="portal-navigation"
+        class="nav nav-tabs nav-stacked"
+        tal:define="navtree viewlet/navStrategy">
+        <tal:tabs tal:repeat="tab navtree">
+            <li tal:define="tid tab/itemid;
+                         item tab/item;
+                         children tab/children;
+                         selected_tab python:viewlet.isActiveItem(tid)"
+             tal:attributes="id string:portaltab-${tid};
+                            class python:selected_tab==tid and 'selected' or 'plain'">
+            <a href=""
+                class="megamenu-toggle"
+               tal:attributes="href item/getURL;
+                               title item/Description|nothing;
+                               data-appui-target python:'#megamenu-' + tid;
+                               class python:children and 'megamenu-toggle' or 'plain-navlink'">
+                <span tal:content="item/Title">Tab Name</span>
+            </a>
+            <tal:children tal:condition="children">
+                <ul class="megamenu"
+                    tal:attributes="id python:'megamenu-' + tid">
+                    <tal:block tal:repeat="child children">
+                        <li tal:define="childid child/normalized_id"
+                            tal:attributes="class python:viewlet.isActiveItem(childid)">
+                            <a href=""
+                                tal:attributes="href child/getURL"
+                                tal:content="child/Title" />
+                        </li>
+                        <!--<li class="divider" tal:condition="not:repeat/child/end"></li>-->
+                    </tal:block>
+                </ul>
+            </tal:children>
+            </li>
+            <li class="divider-vertical" tal:condition="not:repeat/tab/end"></li>
+        </tal:tabs>
+    </ul>
+</tal:block>

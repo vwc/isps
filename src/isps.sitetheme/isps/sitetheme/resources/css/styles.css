@@ -5310,6 +5310,25 @@ header.main-nav .navbar .divider-vertical {
 header.main-nav #pathbar {
   padding-top: 9px;
 }
+#main-nav {
+  position: relative;
+}
+#main-nav .megamenu {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  z-index: 1000;
+  width: 700px;
+  background: #ffffff;
+  border: 1px solid #999999;
+  padding: 18px;
+  margin: 0px;
+  list-style: none;
+}
+#main-nav .megamenu .navitem a {
+  text-transform: uppercase;
+}
 #frontpage-content {
   padding-top: 18px;
 }

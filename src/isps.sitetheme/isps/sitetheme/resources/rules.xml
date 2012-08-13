@@ -60,7 +60,10 @@
             css:theme-children="#searchbox" />
 
         <!-- Global navigation -->
-        <replace css:content="#portal-globalnav li" css:theme-children="#main-nav" />
+        <!--<replace css:content="#portal-globalnav li" css:theme-children="#main-nav" />-->
+
+        <replace css:theme-children="#main-nav"
+            css:content-children="#portal-navigation" />
 
         <!-- Breadcrumbs -->
         <replace css:content-children='#portal-breadcrumbs' css:theme-children='#pathbar' />
