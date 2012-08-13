@@ -4501,7 +4501,7 @@ a.badge:hover {
 }
 .image-right {
   float: right;
-  margin: 9px;
+  margin: 9px 0 18px 18px;
 }
 .image-inline {
   float: none;
@@ -5261,7 +5261,7 @@ header.main-nav .navbar .navbar-inner .container {
 header.main-nav .navbar .navbar-inner .container #logo {
   background: url(../img/sprite.png) no-repeat -200px -350px transparent;
   display: block;
-  width: 156px;
+  width: 146px;
   height: 89px;
   padding: 0px 27px 18px 0px;
   text-indent: -3000px;
@@ -5313,6 +5313,15 @@ header.main-nav #pathbar {
 #frontpage-content {
   padding-top: 18px;
 }
+#frontpage-content h2 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #999999;
+  text-transform: uppercase;
+}
+#frontpage-content .infopane {
+  padding: 0px 18px;
+}
 #hero-bar {
   background: #ffffff;
   padding-top: 18px;
@@ -5362,6 +5371,16 @@ header.main-nav #pathbar {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 9px;
+}
+h1.documentFirstHeading,
+h2,
+h3 {
+  color: #999999;
+}
+h1.documentFirstHeading {
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
 }
 /* Collapsible elements in search_form */
 .collapsible .collapser.collapsed {
@@ -5567,6 +5586,12 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
   color: #ffffff;
   height: 280px;
 }
+#banner-gallery .bannerbar .banner .banner-info h3 {
+  line-height: 20px;
+}
+#banner-gallery .bannerbar .banner .banner-info p {
+  line-height: 15px;
+}
 #banner-gallery .bannerbar .banner .banner-info .banner-more {
   position: absolute;
   display: block;
@@ -5611,12 +5636,13 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 }
 #infotabs {
   margin-top: 18px;
+  margin-left: 0px;
 }
 #infotabs .infotab {
   font-size: 40px;
   line-height: 45px;
   color: #ffffff;
-  width: 90px;
+  width: 100px;
   height: 120px;
   list-style: none;
   margin: 0px 10px 10px 0;

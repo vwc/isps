@@ -34,7 +34,7 @@
               </div>
               <div class="span4">
                 <div class="banner-info">
-                  <h2 tal:content="item/Title" />
+                  <h3 tal:content="item/Title" />
                   <hr />
                   <p tal:content="item/Description" />
                   <div class="banner-more">

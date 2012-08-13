@@ -23,7 +23,7 @@ header.main-nav {
                 #logo {
                     background: url(../img/sprite.png) no-repeat -200px -350px transparent;
                     display: block;
-                    .size(89px, 156px);
+                    .size(89px, 146px);
                     padding: 0px @baseLineHeight * 1.5 @baseLineHeight 0px;
                     text-indent: -3000px;
                     overflow: hidden;
@@ -82,6 +82,15 @@ header.main-nav {
 
 #frontpage-content {
     padding-top: @baseLineHeight;
+    h2 {
+        font-size: @baseFontSize + 2;
+        font-weight: normal;
+        color: @grayLight;
+        text-transform: uppercase;
+    }
+    .infopane {
+        padding: 0px @baseLineHeight;
+    }
 }
 
 #hero-bar {
@@ -136,6 +145,17 @@ header.main-nav {
     }
 }
 
+// Main content area styles
+
+h1.documentFirstHeading, h2, h3 {
+    color: @grayLight;
+}
+
+h1.documentFirstHeading {
+    font-size: 24px;
+    line-height: @baseLineHeight * 2;
+    text-transform: uppercase;
+}
 
 /* Collapsible elements in search_form */
 
@@ -352,6 +372,12 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
                 padding: @baseLineHeight;
                 color: @white;
                 height: 280px;
+                h3 {
+                    line-height: 20px;
+                }
+                p {
+                    line-height: @baseLineHeight - 3;
+                }
                 .banner-more {
                     position: absolute;
                     display: block;
@@ -400,11 +426,12 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 
 #infotabs {
     margin-top: @baseLineHeight;
+    margin-left: 0px;
     .infotab {
         font-size: 40px;
         line-height: 45px;
         color: @white;
-        .size(120px, 90px);
+        .size(120px, 100px);
         list-style: none;
         margin: 0px 10px 10px 0;
         text-align: center;
