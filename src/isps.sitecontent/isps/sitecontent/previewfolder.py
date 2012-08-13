@@ -7,6 +7,7 @@ from plone.namedfile.field import NamedBlobImage
 from plone.namedfile.interfaces import IImageScaleTraversable
 
 from plone.app.contentlisting.interfaces import IContentListing
+from plone.app.blob.interfaces import IATBlobImage
 from isps.sitecontent.project import IProject
 from isps.sitecontent.contentpage import IContentPage
 
@@ -62,5 +63,23 @@ class View(grok.View):
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
                           review_state='published')
+        resultlist = IContentListing(results)
+        return resultlist
+
+
+class GalleryView(grok.View):
+    grok.context(IPreviewFolder)
+    grok.require('zope2.View')
+    grok.name('gallery-view')
+
+    def update(self):
+        self.has_images = len(self.contained_images()) > 0
+
+    def contained_images(self):
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+        results = catalog(object_provides=IATBlobImage.__identifier__,
+                          path=dict(query='/'.join(context.getPhysicalPath()),
+                                    depth=1))
         resultlist = IContentListing(results)
         return resultlist

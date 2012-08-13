@@ -4,8 +4,6 @@ from plone.directives import dexterity, form
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedBlobImage
 
-from plone.app.textfield import RichText
-
 from z3c.relationfield.schema import RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
@@ -26,11 +24,6 @@ class IBanner(form.Schema, IImageScaleTraversable):
         description=_(u"Upload banner image ideally already resized to the "
                       u"correct dimensions"),
         required=True,
-    )
-    text = RichText(
-        title=_(u"Banner Overlay Text"),
-        description=_(u"Enter banner overlay text displayed above the image"),
-        required=False,
     )
     project = RelationChoice(
         title=_(u"Project"),
