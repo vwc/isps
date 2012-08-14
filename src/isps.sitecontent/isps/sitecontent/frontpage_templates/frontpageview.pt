@@ -27,9 +27,6 @@
               <div class="span8">
                 <div class="banner-content" 
                   tal:attributes="style string:background:url(${picture/url}) no-repeat 0% 0% scroll">
-                  <div class="banner-caption">
-                    <span tal:replace="structure item_obj/text/output" />
-                  </div>
                 </div>
               </div>
               <div class="span4">

@@ -39,9 +39,9 @@ class IProject(form.Schema, IImageScaleTraversable):
         label=_(u"Project Details"),
         fields=['contractor', 'architect', 'planning_period',
                 'construction_period', 'construction_costs',
-                'floor_space_title', 'floor_space',
-                'floor_index_title', 'floor_space_index',
-                'capacity_title', 'capacity', 'services']
+                'space_one', 'space_one_value',
+                'space_two', 'space_two_value',
+                'space_three', 'space_three_value', 'services']
     )
     contractor = schema.TextLine(
         title=_(u"Building Contractor"),
@@ -63,28 +63,28 @@ class IProject(form.Schema, IImageScaleTraversable):
         title=_(u"Construction Costs"),
         required=False,
     )
-    floor_space_title = schema.TextLine(
-        title=_(u"Floor Space Title"),
+    space_one = schema.TextLine(
+        title=_(u"Space One Title"),
         required=False,
     )
-    floor_space = schema.TextLine(
-        title=_(u"Floor Space"),
+    space_one_value = schema.TextLine(
+        title=_(u"Space One Value"),
         required=False,
     )
-    floor_index_title = schema.TextLine(
-        title=_(u"Floor Index Title"),
+    space_two = schema.TextLine(
+        title=_(u"Space Two Title"),
         required=False
     )
-    floor_space_index = schema.TextLine(
-        title=_(u"Floor Space Index"),
+    space_two_value = schema.TextLine(
+        title=_(u"Space Two Value"),
         required=False,
     )
-    capacity_title = schema.TextLine(
-        title=_(u"Capacity title"),
+    space_three = schema.TextLine(
+        title=_(u"Space Three Title"),
         required=False,
     )
-    capacity = schema.TextLine(
-        title=_(u"Cubic Capacity"),
+    space_three_value = schema.TextLine(
+        title=_(u"Space Three Value"),
         required=False,
     )
     services = schema.Text(
