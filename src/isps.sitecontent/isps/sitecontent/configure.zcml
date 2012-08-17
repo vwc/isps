@@ -26,5 +26,11 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+  <plone:behavior
+    title="Recent Event Behavior"
+    description="Mark page as recent item and add details"
+    provides=".recentbehavior.IRecentEventBehavior"
+    for="plone.dexterity.interfaces.IDexterityContent"
+    />
 
 </configure>

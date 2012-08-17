@@ -27,14 +27,11 @@
               <div class="span8">
                 <div class="banner-content" 
                   tal:attributes="style string:background:url(${picture/url}) no-repeat 0% 0% scroll">
-                  <div class="banner-caption">
-                    <span tal:replace="structure item_obj/text/output" />
-                  </div>
                 </div>
               </div>
               <div class="span4">
                 <div class="banner-info">
-                  <h2 tal:content="item/Title" />
+                  <h3 tal:content="item/Title" />
                   <hr />
                   <p tal:content="item/Description" />
                   <div class="banner-more">
@@ -67,49 +64,49 @@
           <div class="infopane">
             <h2>Beraten</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well1" />
             </div>
           </div>
           <div class="infopane">
             <h2>Planen</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well2" />
             </div>
           </div>
           <div class="infopane">
             <h2>Pr&uuml;fen</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well3" />
             </div>
           </div>
           <div class="infopane">
             <h2>Betreuen</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well4" />
             </div>
           </div>
           <div class="infopane">
             <h2>Entwickeln</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well5" />
             </div>
           </div>
           <div class="infopane">
             <h2>Steuern</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well6" />
             </div>
           </div>
           <div class="infopane">
             <h2>&Uuml;berwachen</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well7" />
             </div>
           </div>
           <div class="infopane">
             <h2>Begutachten</h2>
             <div class="infopane-content">
-              <p>Info Tile inserted here</p>
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well8" />
             </div>
           </div>
         </div>

@@ -1,28 +1,27 @@
 <?xml version="1.0"?>
-<object name="isps.sitecontent.project"
+<object name="isps.sitecontent.previewfolder"
    meta_type="Dexterity FTI"
    i18n:domain="isps.sitecontent" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Project</property>
+  <property name="title" i18n:translate="">PreviewFolder</property>
   <property name="description"
-    i18n:translate="">A specific project content type</property>
+    i18n:translate="">Folder with optional image previews</property>
   <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
-  <property name="factory">isps.sitecontent.project</property>
+  <property name="factory">isps.sitecontent.previewfolder</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>  
-  <property name="allowed_content_types" />
+  <property name="allowed_content_types" /> 
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">isps.sitecontent.project.IProject</property> 
-  <property name="klass">isps.sitecontent.project.Project</property>
+  <property name="schema">isps.sitecontent.previewfolder.IPreviewFolder</property> 
+  <property name="klass">isps.sitecontent.previewfolder.PreviewFolder</property>
 
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
      <element value="collective.upload.behaviors.IMultipleUpload" />
-     <element value="isps.sitecontent.recentbehavior.IRecentEventBehavior" />
    </property>
 
   <!-- View information -->

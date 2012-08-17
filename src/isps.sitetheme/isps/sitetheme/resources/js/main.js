@@ -9,6 +9,14 @@
             // enhancement.
             return;
         }
+        var current, menuboxes = $('ul.megamenu');
+        $('a.megamenu-toggle').on('click', function (e) {
+            var target_menu = $(this).data('appui-target');
+            current = $(target_menu);
+            menuboxes.not(current).fadeOut('slow');
+            current.toggle('slow');
+            e.preventDefault();
+        });
         $(".bannertabs").tabs('.bannerbar > div.banner', {
             effect: 'fade',
             fadeOutSpeed: 1000,
