@@ -50,8 +50,9 @@
 
         <drop css:theme="#editbar-wrapper"
             css:if-content="#anon-personalbar" />
-        <replace css:theme-children="#editbar" css:content="#edit-bar" />
-        <replace css:theme-children="#personal-tools" 
+        <replace css:theme="#editbar-wrapper"
+            css:content="#toolbar" />
+        <after css:theme-children="#editbar" 
             css:content-children="#portal-personaltools" />
 
         <!-- Logo (link target) -->
@@ -72,9 +73,9 @@
         <replace css:content-children='#portal-breadcrumbs' css:theme-children='#pathbar' />
 
         <!-- Document Content -->
-        <replace css:content-children="#content" css:theme-children="#main-content" />
+        <replace css:content-children="#content" css:theme-children="#content" />
         <!--<before css:content="#edit-bar" css:theme="#document-content" />-->
-        <before css:content=".portalMessage" css:theme="#document-content" />
+        <before css:content=".portalMessage" css:theme="#content" />
 
         <replace css:content="#banner-gallery" css:theme="#gallery"
             css:if-content="body.template-frontpage-view" />
