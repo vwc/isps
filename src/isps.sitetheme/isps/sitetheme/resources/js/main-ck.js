@@ -31,5 +31,17 @@
             e(".items img").removeClass("active");
             e(this).addClass("active");
         }).filter(":first").click();
+        e("a.popoverLogin").prepOverlay({
+            subtype: "ajax",
+            filter: common_content_filter,
+            formselector: "form#login_form",
+            noform: "redirect",
+            redirect: function(t, n) {
+                var r = location.href;
+                if (r.search(/pwreset_finish$/) >= 0) return r.slice(0, r.length - 14) + "logged_in";
+                var i = e("<div>").html(n).find("base").attr("href");
+                return e.trim(i) && i !== location.href ? i : r;
+            }
+        });
     });
 })(jQuery);

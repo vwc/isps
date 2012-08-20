@@ -45,7 +45,7 @@ class IContentPage(form.Schema, IImageScaleTraversable):
 @indexer(IContentPage)
 def searchableTextIndexer(obj):
     return ' '.join([safe_unicode(obj.Title()),
-                     obj.Description(),
+                     safe_unicode(obj.Description()),
                      obj.text.output])
 grok.global_adapter(searchableTextIndexer, name="SearchableText")
 
