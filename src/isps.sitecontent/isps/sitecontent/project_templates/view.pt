@@ -16,12 +16,14 @@
         <h1 tal:content="context/Title">Title inserted here</h1>
       </div>
 
+      <tal:disabled tal:content="nothing">
       <tal:block tal:repeat="item view/image_list">
         <h6>Thumb</h6>
         <p tal:content="item/thumb_url" />
         <h6>Original</h6>
         <p tal:content="item/original_url" />
       </tal:block>
+      </tal:disabled>
 
       <div class="project-img thumbnail"
         id="image-wrapper">
