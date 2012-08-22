@@ -98,9 +98,19 @@
           <p tal:content="context/construction_costs" />
         </div>
         <div class="info-box"
-          tal:condition="context/floor_space">
-          <h6>Floor Space</h6>
-          <p tal:content="context/floor_space" />
+          tal:condition="context/space_one_value">
+          <h6 tal:content="context/space_one">Floor Space</h6>
+          <p tal:content="context/space_one_value" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/space_two_value">
+          <h6 tal:content="context/space_two">Floor Space</h6>
+          <p tal:content="context/space_two_value" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/space_two_value">
+          <h6 tal:content="context/space_two">Floor Space</h6>
+          <p tal:content="context/space_two_value" />
         </div>
       </div>
     </aside>
