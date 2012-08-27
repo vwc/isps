@@ -19,7 +19,8 @@
       tal:condition="context/Description"
       tal:content="context/description" />
 
-    <tal:items tal:define="items view/contained_items">
+    <tal:items tal:define="items view/contained_items;
+                           toLocalizedTime nocall:context/@@plone/toLocalizedTime">
       <div class="tile" tal:repeat="item items">
         <div class="row-fluid">
           <div tal:condition="exists:item/image" class="span4">
@@ -27,11 +28,12 @@
               <img tal:define="item_obj item/getObject;
                                scales item_obj/@@images"
                 tal:condition="item_obj/image"
-                tal:replace="structure python:scales.scale('image', scale='large').tag()" />
+                tal:replace="structure python:scales.scale('image', scale='mini').tag()" />
             </a>
           </div>
           <div class="span8">
-            <h6>32.23.2066</h6>
+            <h6 tal:define="modified item/Date"
+              tal:content="python:toLocalizedTime(modified)">32.23.2066</h6>
             <h2 tal:content="item/Title" />
             <p tal:content="item/Description" />
             <a href="" tal:attributes="href item/getURL">

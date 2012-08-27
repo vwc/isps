@@ -5411,6 +5411,9 @@ header.main-nav #pathbar {
   font-weight: normal;
   text-transform: uppercase;
 }
+.tile {
+  margin-bottom: 18px;
+}
 #project-gallery {
   margin: 18px 0px;
 }
