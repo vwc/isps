@@ -5433,11 +5433,14 @@ header.main-nav #pathbar {
 .tile {
   margin-bottom: 18px;
 }
+#project-gallery-wrapper #image-wrapper {
+  height: 400px;
+}
 #project-gallery-wrapper #project-gallery {
   margin: 18px 0px;
   position: relative;
   overflow: hidden;
-  width: 600px;
+  width: 560px;
   height: 90px;
 }
 #project-gallery-wrapper #project-gallery .items {
@@ -5446,23 +5449,49 @@ header.main-nav #pathbar {
 }
 #project-gallery-wrapper #project-gallery .items div {
   float: left;
-  width: 600px;
+  width: 560px;
 }
 #project-gallery-wrapper #project-gallery .items div .img-polaroid {
-  margin: 0px 20px;
+  margin: 0px 15px;
+}
+#project-gallery-wrapper a.browse {
+  background: transparent;
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  margin: 40px 10px;
+  cursor: pointer;
+  font-size: 26px;
+}
+#project-gallery-wrapper a.browse.left {
+  margin-left: 0px;
+}
+#project-gallery-wrapper a.browse.right {
+  float: right;
+  clear: right;
+  margin-right: 0px;
+}
+#project-gallery-wrapper a.browse.disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 #project-gallery-wrapper .navi {
   background: transparent;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   top: -20px;
   height: 20px;
-  padding-left: 40px;
-  width: 280px;
+  width: 180px;
 }
 #project-gallery-wrapper .navi a {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -5475,7 +5504,7 @@ header.main-nav #pathbar {
 #project-gallery-wrapper .navi a:hover {
   background: #c76745;
 }
-#project-gallery-wrapper .navi a.current {
+#project-gallery-wrapper .navi a.active {
   background: #c76745;
 }
 #project-details {

@@ -39,6 +39,7 @@ class View(grok.View):
 
     def update(self):
         self.has_projects = len(self.contained_projects()) > 0
+        self.has_subfolders = len(self.subfolders()) > 0
 
     def contained_items(self):
         if self.has_projects:
@@ -60,6 +61,16 @@ class View(grok.View):
         context = aq_inner(self.context)
         catalog = getToolByName(context, 'portal_catalog')
         results = catalog(object_provides=IContentPage.__identifier__,
+                          path=dict(query='/'.join(context.getPhysicalPath()),
+                                    depth=1),
+                          review_state='published')
+        resultlist = IContentListing(results)
+        return resultlist
+
+    def subfolders(self):
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+        results = catalog(object_provides=IPreviewFolder.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
                           review_state='published')

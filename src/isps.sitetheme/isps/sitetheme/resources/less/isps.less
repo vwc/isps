@@ -188,36 +188,59 @@ header.main-nav {
 }
 
 #project-gallery-wrapper {
+    #image-wrapper {
+        height: 400px;
+    }
     #project-gallery {
         margin: @baseLineHeight 0px;
         position:relative;
         overflow:hidden;
-        width: 600px;
+        width: 560px;
         height:90px;
         .items {
             width: 20000em;
             position: absolute;
             div {
                 float:left;
-                width: 600px;
+                width: 560px;
                 .img-polaroid {
-                    margin: 0px 20px;
+                    margin: 0px 15px;
                 }
             }
+        }
     }
+    a.browse {
+        background:transparent;
+        display:block;
+        .square(20px);
+        .border-radius(50%);
+        float:left;
+        margin:40px 10px;
+        cursor:pointer;
+        font-size: @baseFontSize * 2;
+        &.left {
+            margin-left: 0px;
+        }
+        &.right {
+            float:right;
+            clear:right;
+            margin-right: 0px;
+        }
+        &.disabled {
+            .opacity(50);
+        }
     }
     .navi {
         //clear:both;
         background: transparent;
         display: block;
+        .center-block();
         position: relative;
         top: -20px;
         height: 20px;
-        padding-left: 40px;
-        width: 280px;
-        //z-index: @zindexModal;
+        width: 180px;
         a {
-            .square(12px);
+            .square(10px);
             .border-radius(50%);
             float:left;
             margin:3px;
@@ -227,7 +250,7 @@ header.main-nav {
             &:hover {
                 background:@ispRed;
             }
-            &.current {
+            &.active {
                 background:@ispRed;
             }
         }

@@ -19,12 +19,18 @@
       <div id="project-gallery-wrapper">
         <div class="project-img thumbnail"
           id="image-wrapper">
-          <img tal:define="scales context/@@images"
+          <img class="img-polaroid"
+            tal:define="scales context/@@images"
             tal:replace="structure python: scales.tag(
                          'image', scale='preview')"
             />
         </div>
-        <div class="project-gallery" id="project-gallery">
+        <a class="prev browse left">
+          <i class="icon-chevron-left" />
+        </a>
+        <a class="next browse right"><i class="icon-chevron-right" /></a>
+        <div class="project-gallery" id="project-gallery"
+          tal:condition="view/has_images">
           <div class="items">
             <tal:block tal:repeat="row view/image_matrix">
               <div>
@@ -134,6 +140,11 @@
           tal:condition="context/space_two_value">
           <h6 tal:content="context/space_two">Floor Space</h6>
           <p tal:content="context/space_two_value" />
+        </div>
+        <div class="info-box"
+          tal:condition="context/services">
+          <h6>ISP-Leistungsanteil</h6>
+          <p tal:content="context/services" />
         </div>
       </div>
     </aside>
