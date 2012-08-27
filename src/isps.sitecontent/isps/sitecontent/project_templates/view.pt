@@ -142,9 +142,13 @@
           <p tal:content="context/space_two_value" />
         </div>
         <div class="info-box"
-          tal:condition="context/services">
+          tal:condition="context/service">
           <h6>ISP-Leistungsanteil</h6>
-          <p tal:content="context/services" />
+          <ul>
+            <li tal:repeat="item context/service">
+              <span tal:replace="item" />
+            </li>
+          </ul>
         </div>
       </div>
     </aside>

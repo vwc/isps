@@ -10,6 +10,7 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedBlobImage
 
 from plone.app.textfield import RichText
+from plone.z3cform.textlines import TextLinesFieldWidget
 from Products.CMFCore.utils import getToolByName
 
 from plone.app.blob.interfaces import IATBlobImage
@@ -41,7 +42,7 @@ class IProject(form.Schema, IImageScaleTraversable):
                 'construction_period', 'construction_costs',
                 'space_one', 'space_one_value',
                 'space_two', 'space_two_value',
-                'space_three', 'space_three_value', 'services']
+                'space_three', 'space_three_value', 'service']
     )
     contractor = schema.TextLine(
         title=_(u"Building Contractor"),
@@ -87,11 +88,15 @@ class IProject(form.Schema, IImageScaleTraversable):
         title=_(u"Space Three Value"),
         required=False,
     )
-    services = schema.Text(
+    form.widget(service=TextLinesFieldWidget)
+    service = schema.List(
         title=_(u"ISP Services"),
         description=_(u"Enter ISP services one sentence per line. These will "
                       u"displayed as a bulleted list"),
         required=False,
+        value_type=schema.TextLine(
+            title=_(u"Single Service")
+        )
     )
 
 
@@ -106,6 +111,10 @@ class View(grok.View):
 
     def update(self):
         self.has_images = len(self.contained_images()) > 0
+
+    def services(self):
+        services = self.context.services
+        return len(services)
 
     def contained_images(self):
         context = aq_inner(self.context)
