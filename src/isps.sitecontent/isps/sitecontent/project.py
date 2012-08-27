@@ -128,8 +128,8 @@ class View(grok.View):
             info['thumb_height'] = thumb['height']
             original = self.getImageTag(item, scalename='original')
             info['original_url'] = original['url']
-            info['original_width'] = thumb['width']
-            info['original_height'] = thumb['height']
+            info['original_width'] = original['width']
+            info['original_height'] = original['height']
             data.append(info)
         projectimg = {}
         projectimg['title'] = context.Title
@@ -145,7 +145,7 @@ class View(grok.View):
         return data
 
     def image_matrix(self):
-        items = self.contained_images()
+        items = self.image_list()
         count = len(items)
         rowcount = count / 4.0
         rows = math.ceil(rowcount)
@@ -162,12 +162,15 @@ class View(grok.View):
         return matrix
 
     def getImageTag(self, item, scalename):
-        obj = item.getObject()
+        if IProject.providedBy(item):
+            obj = item
+        else:
+            obj = item.getObject()
         scales = getMultiAdapter((obj, self.request), name='images')
         if scalename == 'thumb':
             scale = scales.scale('image', width=100, height=100)
         else:
-            scale = scales.scale('image', width=600, height=400)
+            scale = scales.scale('image', width=500, height=500)
         item = {}
         if scale is not None:
             item['url'] = scale.url

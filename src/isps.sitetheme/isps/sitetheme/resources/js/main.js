@@ -28,14 +28,21 @@
         $('#infotabs').tabs('div.infopanes > div.infopane', {
             tabs: 'li.infotab'
         });
+        $('#project-gallery').scrollable().navigator();
         $("#project-gallery .items img").on('click', function () {
             if ($(this).hasClass("active")) { return; }
             var url = $(this).data('image-url');
+            var width = $(this).data('image-width');
+            var height = $(this).data('image-height');
             var wrap = $("#image-wrapper").fadeTo("medium", 0.5);
             var img = new Image();
             img.onload = function () {
                 wrap.fadeTo("fast", 1);
-                wrap.find("img").attr("src", url);
+                wrap.find("img").attr({
+                    "src": url,
+                    "width": width,
+                    "height": height
+                });
             };
             img.src = url;
             $(".items img").removeClass("active");

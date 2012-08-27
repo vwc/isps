@@ -20,14 +20,19 @@
         e("#infotabs").tabs("div.infopanes > div.infopane", {
             tabs: "li.infotab"
         });
+        e("#project-gallery").scrollable().navigator();
         e("#project-gallery .items img").on("click", function() {
             if (e(this).hasClass("active")) return;
-            var t = e(this).data("image-url"), n = e("#image-wrapper").fadeTo("medium", .5), r = new Image;
-            r.onload = function() {
-                n.fadeTo("fast", 1);
-                n.find("img").attr("src", t);
+            var t = e(this).data("image-url"), n = e(this).data("image-width"), r = e(this).data("image-height"), i = e("#image-wrapper").fadeTo("medium", .5), s = new Image;
+            s.onload = function() {
+                i.fadeTo("fast", 1);
+                i.find("img").attr({
+                    src: t,
+                    width: n,
+                    height: r
+                });
             };
-            r.src = t;
+            s.src = t;
             e(".items img").removeClass("active");
             e(this).addClass("active");
         }).filter(":first").click();

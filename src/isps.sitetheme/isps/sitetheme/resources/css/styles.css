@@ -147,6 +147,25 @@ a:hover {
   color: #93472c;
   text-decoration: underline;
 }
+.img-rounded {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.img-circle {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
 .row-fixed {
   margin-left: -20px;
   *zoom: 1;
@@ -5414,8 +5433,50 @@ header.main-nav #pathbar {
 .tile {
   margin-bottom: 18px;
 }
-#project-gallery {
+#project-gallery-wrapper #project-gallery {
   margin: 18px 0px;
+  position: relative;
+  overflow: hidden;
+  width: 600px;
+  height: 90px;
+}
+#project-gallery-wrapper #project-gallery .items {
+  width: 20000em;
+  position: absolute;
+}
+#project-gallery-wrapper #project-gallery .items div {
+  float: left;
+  width: 600px;
+}
+#project-gallery-wrapper #project-gallery .items div .img-polaroid {
+  margin: 0px 20px;
+}
+#project-gallery-wrapper .navi {
+  background: transparent;
+  display: block;
+  position: relative;
+  top: -20px;
+  height: 20px;
+  padding-left: 40px;
+  width: 280px;
+}
+#project-gallery-wrapper .navi a {
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  margin: 3px;
+  background: #4066aa;
+  display: block;
+  font-size: 1px;
+}
+#project-gallery-wrapper .navi a:hover {
+  background: #c76745;
+}
+#project-gallery-wrapper .navi a.current {
+  background: #c76745;
 }
 #project-details {
   border-left: 1px solid #555555;
