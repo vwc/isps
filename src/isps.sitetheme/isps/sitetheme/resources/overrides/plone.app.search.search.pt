@@ -37,7 +37,7 @@
         <input type="hidden" name="advanced_search" value="False" />
         <input type="hidden" name="sort_on" value="" />
 
-        <fieldset id="search-field" i18n:domain="plone" class="noborder">
+        <fieldset id="search-field" i18n:domain="plone" class="noborder input-append">
             <input class="searchPage"
                    name="SearchableText"
                    type="text"
@@ -46,7 +46,7 @@
                    i18n:attributes="title title_search_title;"
                    tal:attributes="value st;"
                    />
-            <input class="xsearchPage searchButton btn btn-primary allowMultiSubmit"
+            <input class="xsearchPage searchButton btn btn-primary btn-large allowMultiSubmit"
                    type="submit"
                    value="Search"
                    i18n:attributes="value label_search;"/>
@@ -58,17 +58,17 @@
                 <h1 class="documentFirstHeading"
                     i18n:translate=""
                     tal:condition="not:st">
-                    Search results
+                    Suchergebnisse
                 </h1>
                 <h1 class="documentFirstHeading"
                     i18n:translate=""
                     tal:condition="st">
-                    Search results for
+                    Suchergenisse f&uuml;r
                     <strong id="search-term" tal:content="st" i18n:name="term">
                         Search Term
                     </strong>
                 </h1>
-
+                <tal:comment tal:content="nothing">
                 <p id="rss-subscription" i18n:domain="plone"
                    tal:condition="context/portal_syndication/isSiteSyndicationAllowed">
                       <img src="" alt="RSS"
@@ -82,6 +82,7 @@
                         </span>
                     </a>
                 </p>
+                </tal:comment>
             </div>
             <div class="visualClear"><!-- --></div>
             <div id="search-results-wrapper"
