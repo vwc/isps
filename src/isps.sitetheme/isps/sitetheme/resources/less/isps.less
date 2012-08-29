@@ -56,14 +56,16 @@ body {
 }
 
 header.main-nav {
-    padding-top: @baseLineHeight;
     .navbar {
         margin-bottom: 0px;
         .navbar-inner {
+            padding-top: @baseLineHeight;
             min-height: @navbarHeight * 2;
             background: transparent;
+            background-image: none;
             .border-radius(0px);
             .box-shadow(0 0 0);
+            border: 0px;
             .container {
                 #grid > .core > .span(@gridColumns);
                 border-bottom: 1px solid @grayLight;
@@ -76,28 +78,32 @@ header.main-nav {
                     overflow: hidden;
                 }
                 .navbar-text {
+                    line-height: 30px;
                     h1 {
                         font-weight: normal;
                         color: @ispBlue;
                         font-size: 28px;
+                        line-height: 30px;
                     }
                     h3 {
                         font-weight: normal;
                         color: @ispBlue;
                         font-size: 16px;
+                        line-height: 20px;
+                        margin: 0;
                     }
                 }
             }
         }
     }
     .nav {
-        margin-top: @baseLineHeight;
+        margin-top: 9px;
     }
     .navbar .nav > li > a {
         float: none;
         // Vertically center the text given @navbarHeight
         @elementHeight: 20px;
-        padding: 0px 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+        padding: 0px 0px ((@navbarHeight - @elementHeight) / 2 + 1);
         line-height: 19px;
         color: @navbarLinkColor;
         text-decoration: none;
@@ -195,16 +201,16 @@ header.main-nav {
         margin: @baseLineHeight 0px;
         position:relative;
         overflow:hidden;
-        width: 560px;
+        width: 520px;
         height:90px;
         .items {
             width: 20000em;
             position: absolute;
             div {
                 float:left;
-                width: 560px;
+                width: 520px;
                 .img-polaroid {
-                    margin: 0px 15px;
+                    margin: 0px 10px;
                 }
             }
         }

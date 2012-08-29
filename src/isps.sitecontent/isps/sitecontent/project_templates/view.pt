@@ -10,7 +10,7 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
 
-  <section class="row-fixed">
+  <section class="row">
     <article class="span8">
       <div class="page-header">
         <h1 tal:content="context/Title">Title inserted here</h1>
@@ -25,10 +25,12 @@
                          'image', scale='preview')"
             />
         </div>
-        <a class="prev browse left">
-          <i class="icon-chevron-left" />
-        </a>
-        <a class="next browse right"><i class="icon-chevron-right" /></a>
+        <tal:navi tal:condition="view/has_images">
+          <a class="prev browse left">
+            <i class="icon-chevron-left" />
+          </a>
+          <a class="next browse right"><i class="icon-chevron-right" /></a>
+        </tal:navi>
         <div class="project-gallery" id="project-gallery"
           tal:condition="view/has_images">
           <div class="items">
