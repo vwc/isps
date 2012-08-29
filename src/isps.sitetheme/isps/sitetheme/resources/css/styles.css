@@ -5458,6 +5458,112 @@ input.standalone .badge {
 span.required {
   display: inline-block;
 }
+/* Pulldown menu state indicators */
+#plone-contentmenu-workflow .state-private,
+#plone-contentmenu-workflow .state-visible,
+#plone-contentmenu-workflow .state-published,
+#plone-contentmenu-workflow .state-pending,
+#plone-contentmenu-workflow .state-expired {
+  text-shadow: none;
+  border: none;
+  font-size: 10.998px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #999999;
+  padding: 1px 9px 2px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+#plone-contentmenu-workflow .state-private-important,
+#plone-contentmenu-workflow .state-visible-important,
+#plone-contentmenu-workflow .state-published-important,
+#plone-contentmenu-workflow .state-pending-important,
+#plone-contentmenu-workflow .state-expired-important {
+  background-color: #b94a48;
+}
+#plone-contentmenu-workflow .state-private-important[href],
+#plone-contentmenu-workflow .state-visible-important[href],
+#plone-contentmenu-workflow .state-published-important[href],
+#plone-contentmenu-workflow .state-pending-important[href],
+#plone-contentmenu-workflow .state-expired-important[href] {
+  background-color: #953b39;
+}
+#plone-contentmenu-workflow .state-private-warning,
+#plone-contentmenu-workflow .state-visible-warning,
+#plone-contentmenu-workflow .state-published-warning,
+#plone-contentmenu-workflow .state-pending-warning,
+#plone-contentmenu-workflow .state-expired-warning {
+  background-color: #f89406;
+}
+#plone-contentmenu-workflow .state-private-warning[href],
+#plone-contentmenu-workflow .state-visible-warning[href],
+#plone-contentmenu-workflow .state-published-warning[href],
+#plone-contentmenu-workflow .state-pending-warning[href],
+#plone-contentmenu-workflow .state-expired-warning[href] {
+  background-color: #c67605;
+}
+#plone-contentmenu-workflow .state-private-success,
+#plone-contentmenu-workflow .state-visible-success,
+#plone-contentmenu-workflow .state-published-success,
+#plone-contentmenu-workflow .state-pending-success,
+#plone-contentmenu-workflow .state-expired-success {
+  background-color: #468847;
+}
+#plone-contentmenu-workflow .state-private-success[href],
+#plone-contentmenu-workflow .state-visible-success[href],
+#plone-contentmenu-workflow .state-published-success[href],
+#plone-contentmenu-workflow .state-pending-success[href],
+#plone-contentmenu-workflow .state-expired-success[href] {
+  background-color: #356635;
+}
+#plone-contentmenu-workflow .state-private-info,
+#plone-contentmenu-workflow .state-visible-info,
+#plone-contentmenu-workflow .state-published-info,
+#plone-contentmenu-workflow .state-pending-info,
+#plone-contentmenu-workflow .state-expired-info {
+  background-color: #3a87ad;
+}
+#plone-contentmenu-workflow .state-private-info[href],
+#plone-contentmenu-workflow .state-visible-info[href],
+#plone-contentmenu-workflow .state-published-info[href],
+#plone-contentmenu-workflow .state-pending-info[href],
+#plone-contentmenu-workflow .state-expired-info[href] {
+  background-color: #2d6987;
+}
+#plone-contentmenu-workflow .state-private-inverse,
+#plone-contentmenu-workflow .state-visible-inverse,
+#plone-contentmenu-workflow .state-published-inverse,
+#plone-contentmenu-workflow .state-pending-inverse,
+#plone-contentmenu-workflow .state-expired-inverse {
+  background-color: #333333;
+}
+#plone-contentmenu-workflow .state-private-inverse[href],
+#plone-contentmenu-workflow .state-visible-inverse[href],
+#plone-contentmenu-workflow .state-published-inverse[href],
+#plone-contentmenu-workflow .state-pending-inverse[href],
+#plone-contentmenu-workflow .state-expired-inverse[href] {
+  background-color: #1a1a1a;
+}
+#plone-contentmenu-workflow .state-private {
+  background-color: #b94a48;
+}
+#plone-contentmenu-workflow .state-published {
+  background-color: #468847;
+}
+#plone-contentmenu-workflow .state-pending {
+  background-color: #3a87ad;
+}
+#plone-contentmenu-workflow .state-expired {
+  background-color: #f89406;
+}
+#plone-contentmenu-workflow .state-visible {
+  background-color: #333333;
+}
 /* styling for overlays (popups) */
 div.overlay {
   width: auto;
