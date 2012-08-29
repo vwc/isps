@@ -99,6 +99,7 @@
                     </span>
 
                     <dl class="actionMenu deactivated"
+                        tal:content="nothing" tal:omit-tag=""
                         tal:attributes="class python:view.show_advanced_search() and 'actionMenu activated' or 'actionMenu deactivated'">
 
                       <dt class="actionMenuHeader">
@@ -267,16 +268,15 @@
                                                    site_properties context/portal_properties/site_properties;
                                                    allowAnonymousViewAbout site_properties/allowAnonymousViewAbout;
                                                    show_about python:not isAnon or allowAnonymousViewAbout;">
-                          <dl class="searchResults">
+                          <div class="searchResults">
                               <tal:results repeat="item batch">
-                                    <dt tal:attributes="class item/ContentTypeClass">
-                                      <img tal:replace="structure item/getIcon" />
+                                    <h3 tal:attributes="class item/ContentTypeClass">
                                       <a href="#"
                                          tal:attributes="href item/getURL;
                                                          class string:state-${item/review_state}"
                                          tal:content="item/Title" />
-                                    </dt>
-                                    <dd>
+                                    </h3>
+                                    <div>
                                       <span class="discreet" i18n:domain="plone"
                                         tal:condition="show_about">
                                         <span class="documentAuthor"
@@ -334,16 +334,16 @@
                                           </span>
                                         </span>
                                       </span>
-                                      <div tal:content="item/CroppedDescription">
+                                      <p tal:content="item/CroppedDescription">
                                         Cropped description
-                                      </div>
+                                      </p>
 
-                                      <cite class="documentLocation link-location"
+                                      <small class="documentLocation link-location"
                                             tal:define="breadcrumbs python: view.breadcrumbs(item);
                                                         is_rtl context/@@plone_portal_state/is_rtl;"
                                             tal:condition='breadcrumbs'>
-                                          <span i18n:translate="text_searchitem_location">
-                                              Located in
+                                          <span>
+                                              Gefunden unter
                                           </span>
                                           <span tal:repeat="crumb breadcrumbs"
                                                 tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';">
@@ -363,11 +363,11 @@
                                                </tal:item>
                                           </span>
 
-                                      </cite>
+                                      </small>
 
-                                    </dd>
+                                    </div>
                               </tal:results>
-                          </dl>
+                          </div>
                           <div metal:use-macro="context/batch_macros/macros/navigation" />
                         </metal:results>
                     </div>
