@@ -1,5 +1,7 @@
+import math
 from five import grok
 from Acquisition import aq_inner
+from zope.component import getMultiAdapter
 from plone.directives import dexterity, form
 
 from Products.CMFCore.utils import getToolByName
@@ -93,4 +95,55 @@ class GalleryView(grok.View):
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1))
         resultlist = IContentListing(results)
-        return resultlist
+        return results
+
+    def image_list(self):
+        images = self.contained_images()
+        data = []
+        for item in images:
+            info = {}
+            info['title'] = item.Title
+            thumb = self.getImageTag(item, scalename='thumb')
+            info['thumb_url'] = thumb['url']
+            info['thumb_width'] = thumb['width']
+            info['thumb_height'] = thumb['height']
+            original = self.getImageTag(item, scalename='original')
+            info['original_url'] = original['url']
+            info['original_width'] = original['width']
+            info['original_height'] = original['height']
+            data.append(info)
+        return data
+
+    def image_matrix(self):
+        items = self.image_list()
+        count = len(items)
+        rowcount = count / 5.0
+        rows = math.ceil(rowcount)
+        matrix = []
+        for i in range(int(rows)):
+            row = []
+            for j in range(5):
+                index = 5 * i + j
+                if index <= int(count - 1):
+                    cell = {}
+                    cell['item'] = items[index]
+                    row.append(cell)
+            matrix.append(row)
+        return matrix
+
+    def getImageTag(self, item, scalename):
+        if IATBlobImage.providedBy(item):
+            obj = item
+        else:
+            obj = item.getObject()
+        scales = getMultiAdapter((obj, self.request), name='images')
+        if scalename == 'thumb':
+            scale = scales.scale('image', width=100, height=100)
+        else:
+            scale = scales.scale('image', width=500, height=500)
+        item = {}
+        if scale is not None:
+            item['url'] = scale.url
+            item['width'] = scale.width
+            item['height'] = scale.height
+        return item

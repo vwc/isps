@@ -6088,7 +6088,7 @@ header.main-nav #pathbar {
   margin-bottom: 18px;
 }
 #project-gallery-wrapper #image-wrapper {
-  height: 400px;
+  height: auto;
 }
 #project-gallery-wrapper #project-gallery {
   margin: 18px 0px;
