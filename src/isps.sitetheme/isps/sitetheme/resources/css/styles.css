@@ -6147,20 +6147,33 @@ header.main-nav #pathbar {
 #main-nav {
   position: relative;
 }
+#main-nav li {
+  position: relative;
+}
 #main-nav .megamenu {
   display: none;
   position: absolute;
-  left: 0px;
-  top: 30px;
+  left: auto;
+  top: 19px;
   z-index: 1000;
-  width: 730px;
+  width: auto;
   background: #ffffff;
-  padding: 18px;
+  padding: 0 18px 18px 0;
   margin: 0px;
   list-style: none;
 }
 #main-nav .megamenu .navitem a {
   text-transform: uppercase;
+  padding: 6px;
+  display: block;
+  color: #4066aa;
+}
+#main-nav li:hover a.megamenu-toggle {
+  color: #c76745;
+  position: relative;
+}
+#main-nav li:hover ul.megamenu {
+  display: block;
 }
 #frontpage-content {
   padding-top: 18px;
@@ -6191,7 +6204,11 @@ header.main-nav #pathbar {
   text-transform: uppercase;
 }
 .tile {
-  margin-bottom: 18px;
+  margin-bottom: 27px;
+}
+.tile h2 {
+  line-height: 28px;
+  margin-top: 0px;
 }
 #project-gallery-wrapper #image-wrapper {
   height: 400px;

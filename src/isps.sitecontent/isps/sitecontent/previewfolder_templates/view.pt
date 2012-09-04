@@ -41,7 +41,7 @@
         <div class="row-fluid">
           <div tal:condition="exists:item/image" class="span4">
             <a href="" tal:attributes="href item/getURL"
-              class="pull-left">
+              class="preview-image">
               <img class="img-polaroid"
                 tal:define="item_obj item/getObject;
                                scales item_obj/@@images"
@@ -50,8 +50,6 @@
             </a>
           </div>
           <div class="span8">
-            <h6 tal:define="modified item/Date"
-              tal:content="python:toLocalizedTime(modified)">32.23.2066</h6>
             <h2 tal:content="item/Title" />
             <p tal:content="item/Description" />
             <a href="" tal:attributes="href item/getURL">

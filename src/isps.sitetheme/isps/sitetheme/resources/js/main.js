@@ -10,7 +10,7 @@
             return;
         }
         var current, menuboxes = $('ul.megamenu');
-        $('a.megamenu-toggle').on('click', function (e) {
+        $('a.xmegamenu-toggle').on('click', function (e) {
             var target_menu = $(this).data('appui-target');
             current = $(target_menu);
             menuboxes.not(current).fadeOut('slow');
