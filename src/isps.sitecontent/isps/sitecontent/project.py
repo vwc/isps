@@ -179,7 +179,7 @@ class View(grok.View):
         if scalename == 'thumb':
             scale = scales.scale('image', width=100, height=100)
         else:
-            scale = scales.scale('image', width=500, height=500)
+            scale = scales.scale('image', width=400, height=400)
         item = {}
         if scale is not None:
             item['url'] = scale.url

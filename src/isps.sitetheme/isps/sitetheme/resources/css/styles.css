@@ -6194,14 +6194,14 @@ header.main-nav #pathbar {
   margin-bottom: 18px;
 }
 #project-gallery-wrapper #image-wrapper {
-  height: auto;
+  height: 400px;
 }
 #project-gallery-wrapper #project-gallery {
   margin: 18px 0px;
   position: relative;
   overflow: hidden;
   width: 520px;
-  height: 90px;
+  height: 110px;
 }
 #project-gallery-wrapper #project-gallery .items {
   width: 20000em;
