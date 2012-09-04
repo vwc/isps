@@ -1,5 +1,5 @@
 /*jslint white:false, onevar:true, undef:true, nomen:true, eqeqeq:true, plusplus:true, bitwise:true, regexp:true, newcap:true, immed:true, strict:false, browser:true */
-/*global jQuery:false, document:false, window:false, location:false */
+/*global jQuery:false, document:false, location:false */
 
 (function ($) {
     $(document).ready(function () {
@@ -23,7 +23,8 @@
             rotate: true
         }).slideshow({
             autoplay: true,
-            interval: 6000
+            interval: 6000,
+            clickable: false
         });
         $('#infotabs').tabs('div.infopanes > div.infopane', {
             tabs: 'li.infotab'
@@ -57,12 +58,12 @@
             redirect: function (overlay, responseText) {
                 var href = location.href;
                 if (href.search(/pwreset_finish$/) >= 0) {
-                    return href.slice(0, href.length-14) + 'logged_in';
+                    return href.slice(0, href.length - 14) + 'logged_in';
                 } else {
                     // look to see if there has been a server redirect
-                    var newTarget = $("<div>").html(responseText).find("base").attr("href"); 
-                    if ($.trim(newTarget) && newTarget !== location.href) { 
-                        return newTarget; 
+                    var newTarget = $("<div>").html(responseText).find("base").attr("href");
+                    if ($.trim(newTarget) && newTarget !== location.href) {
+                        return newTarget;
                     }
                     // if not, simply reload
                     return href;
