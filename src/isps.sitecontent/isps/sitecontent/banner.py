@@ -6,6 +6,7 @@ from plone.namedfile.field import NamedBlobImage
 
 from z3c.relationfield.schema import RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
+from plone.formwidget.autocomplete import AutocompleteFieldWidget
 
 from Products.CMFCore.interfaces import IContentish
 from isps.sitecontent.project import IProject
@@ -25,6 +26,7 @@ class IBanner(form.Schema, IImageScaleTraversable):
                       u"correct dimensions"),
         required=True,
     )
+    form.widget(project=AutocompleteFieldWidget)
     project = RelationChoice(
         title=_(u"Project"),
         description=_(u"Select related project for the banner link"),
