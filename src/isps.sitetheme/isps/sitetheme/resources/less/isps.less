@@ -332,6 +332,12 @@ header.main-nav {
 
 // Main content area styles
 
+#content {
+    .page-header {
+        margin-bottom: 0;
+    }
+}
+
 h1.documentFirstHeading, h2, h3 {
     color: @grayLight;
 }
@@ -340,6 +346,12 @@ h1.documentFirstHeading {
     font-size: 24px;
     line-height: @baseLineHeight * 2;
     text-transform: uppercase;
+}
+
+#content-core {
+    h2, h3 {
+        line-height: @baseLineHeight;
+    }
 }
 
 /* Collapsible elements in search_form */

@@ -139,9 +139,9 @@
           <p tal:content="context/space_two_value" />
         </div>
         <div class="info-box"
-          tal:condition="context/space_two_value">
-          <h6 tal:content="context/space_two">Floor Space</h6>
-          <p tal:content="context/space_two_value" />
+          tal:condition="context/space_three_value">
+          <h6 tal:content="context/space_three">Floor Space</h6>
+          <p tal:content="context/space_three_value" />
         </div>
         <div class="info-box"
           tal:condition="context/service">

@@ -6348,6 +6348,9 @@ header.main-nav #pathbar {
   margin-right: auto;
   margin-bottom: 9px;
 }
+#content .page-header {
+  margin-bottom: 0;
+}
 h1.documentFirstHeading,
 h2,
 h3 {
@@ -6357,6 +6360,10 @@ h1.documentFirstHeading {
   font-size: 24px;
   line-height: 36px;
   text-transform: uppercase;
+}
+#content-core h2,
+#content-core h3 {
+  line-height: 18px;
 }
 /* Collapsible elements in search_form */
 .collapsible .collapser.collapsed {
