@@ -18,7 +18,7 @@
                 <span tal:content="item/Title">Tab Name</span>
             </a>
             <tal:children tal:condition="children">
-                <ul class="megamenu"
+                <ul class="megamenu dropdown-menu"
                     tal:attributes="id python:'megamenu-' + tid">
                     <tal:block tal:repeat="child children">
                         <li tal:define="childid child/normalized_id"

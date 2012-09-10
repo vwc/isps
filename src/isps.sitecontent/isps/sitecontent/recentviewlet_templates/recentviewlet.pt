@@ -1,7 +1,7 @@
 <div id="recent-bar"
     tal:condition="viewlet/has_items">
     <div class="infobox">
-        <h3>News / Aktuelles</h3>
+        <h3>Aktuelles</h3>
     </div>
     <tal:items tal:repeat="item viewlet/recent_items">
         <div class="infobox">

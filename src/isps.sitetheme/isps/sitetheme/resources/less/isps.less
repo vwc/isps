@@ -146,11 +146,11 @@ header.main-nav {
         display: none;
         position:absolute;
         left: auto;
-        top: @baseLineHeight + 1px;
+        top: @baseLineHeight + 4px;
         z-index: 1000;
         width: auto;
         background: @white;
-        padding: 0 @baseLineHeight @baseLineHeight 0;
+        padding: 5px 0 @baseLineHeight 0;
         margin: 0px;
         list-style: none;
         .navitem {
@@ -158,7 +158,18 @@ header.main-nav {
                 text-transform: uppercase;
                 padding: @baseLineHeight / 3;
                 display: block;
-                color: @navbarLinkColor
+                color: @navbarLinkColor;
+                font-size: @baseFontSize - 2;
+                &:hover {
+                    color: @white;
+                }
+            }
+            &.active a {
+                color:@white;
+                background: @navbarLinkColor;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -207,6 +218,15 @@ header.main-nav {
     h2 {
         line-height: 28px;
         margin-top: 0px;
+    }
+    a.preview-image {
+        display: block;
+        //.square(200px);
+        text-align: center;
+        .thumbnail();
+        img {
+            .center-block();
+        }
     }
 }
 
