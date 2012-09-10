@@ -6351,6 +6351,22 @@ header.main-nav #pathbar {
 #content .page-header {
   margin-bottom: 0;
 }
+#content li {
+  list-style-type: none;
+}
+#content ul {
+  margin: 0 0 9px 9px;
+}
+#content li:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: .8em;
+  content: "\f0da";
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0da;&nbsp;');
+}
 h1.documentFirstHeading,
 h2,
 h3 {
