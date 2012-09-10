@@ -34,7 +34,7 @@
       </div>
     </tal:full>
 
-    <tal:notfull tal:condition="python:full == False">
+    <tal:notfull tal:condition="python:full != True">
       <tal:folders tal:condition="view/has_subfolders">
         <div class="tile" tal:repeat="item view/subfolders">
           <tal:image tal:define="item_obj item/getObject"
