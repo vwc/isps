@@ -1,6 +1,7 @@
 import math
 from five import grok
 from Acquisition import aq_inner
+from zope import schema
 from zope.component import getMultiAdapter
 from plone.directives import dexterity, form
 
@@ -28,6 +29,19 @@ class IPreviewFolder(form.Schema, IImageScaleTraversable):
                        "the dropdown menu"),
         required=False,
     )
+    hide_children = schema.Bool(
+        title=_(u"Hide children?"),
+        description=_(u"Please select if you would like to hide the children."
+                      u"This setting disables the dropdown menu in the "
+                      u"main navigation for this folder."),
+        required=False,
+    )
+    full_listing = schema.Bool(
+        title=_(u"Enable full content listing"),
+        description=_(u"Select full content listing if you want the folder to "
+                      u"show both preview folder and content page subitems"),
+        required=False,
+    )
 
 
 class PreviewFolder(dexterity.Container):
@@ -42,6 +56,17 @@ class View(grok.View):
     def update(self):
         self.has_projects = len(self.contained_projects()) > 0
         self.has_subfolders = len(self.subfolders()) > 0
+
+    def construct_full_listing(self):
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+        results = catalog(portal_type=['isps.sitecontent.previewfolder',
+                                       'isps.sitecontent.contentpage'],
+                          path=dict(query='/'.join(context.getPhysicalPath()),
+                                    depth=1),
+                          review_state='published')
+        resultlist = IContentListing(results)
+        return resultlist
 
     def contained_items(self):
         if self.has_projects:

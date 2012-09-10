@@ -5021,13 +5021,32 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+.avatar {
+  margin-right: 2px;
+  line-height: 18px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.avatar.avatar-small {
+  width: 13px;
+  height: 13px;
+}
 .discreet {
   color: #666;
   font-size: 85%;
   font-weight: normal;
 }
 .visualHighlight {
-  background-color: #ffffff;
+  background-color: #ffc40d;
 }
 .pullquote {
   line-height: 18px;
@@ -5041,11 +5060,11 @@ a.badge:hover {
   line-height: 15px;
   padding: 9px 18px;
   margin: 18px 0 18px 18px;
-  border-left: 5px solid #eeeeee;
-  background: #ffffff;
+  border-left: 5px solid #999999;
+  background: #eeeeee;
 }
 .callout {
-  background: #ffffff;
+  background: #eeeeee;
   padding: 18px;
   margin: 0 0 18px;
   border-left: 5px solid #999999;
@@ -5071,7 +5090,20 @@ can both be on an image and a wrapper element e.g. a dl tag*/
 img.image-left,
 img.image-right,
 .captioned img {
-  border: 1px solid #ffffff;
+  display: block;
+  padding: 4px;
+  line-height: 18px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 dd.image-caption {
   text-align: left;
@@ -5267,15 +5299,18 @@ input.standalone .badge {
   background-color: #f5f5f5;
 }
 /* Form overrides */
-input[type="checkbox"] + label {
+input[type="checkbox"] + label,
+.ArchetypesBooleanWidget label {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
 
   *zoom: 1;
-  margin-left: 9px;
+  margin-left: 4.5px;
 }
-input.datetime-widget {
+input.datetime-widget,
+.plone_jscalendar select,
+.ArchetypesCalendarWidget select {
   width: auto;
 }
 /* Emulates the styling from the h1 tag */
@@ -5458,6 +5493,24 @@ input.standalone .badge {
 span.required {
   display: inline-block;
 }
+/* Portal messages are styled like alerts */
+dl.portalMessage {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #c09853;
+}
+dl.portalMessage dt {
+  margin: 0;
+}
+dl.portalMessage dd {
+  margin-left: 0px;
+}
 /* Pulldown menu state indicators */
 #plone-contentmenu-workflow .state-private,
 #plone-contentmenu-workflow .state-visible,
@@ -5621,6 +5674,12 @@ div.overlay div.close {
 .pb-ajax .documentActions {
   display: none;
 }
+div.overlay {
+  /* Hide form elements that don't make sense within an overlay. */
+
+  /* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
+
+}
 div.overlay div.close span,
 div.overlay div.close a {
   display: block;
@@ -5633,17 +5692,13 @@ div.overlay div.close a {
 div.overlay textarea {
   width: 100%;
 }
-/* Hide form elements that don't make sense within an overlay. */
 div.overlay .link-parent {
   display: none;
 }
-div.overlay #createGroup legend {
+div.overlay #createGroup legend,
+div.overlay #createGroup fieldset {
   display: none;
 }
-div.overlay #createGroup fieldset {
-  border: none;
-}
-/* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
 div.overlay p {
   margin-bottom: 1em;
 }
@@ -5723,12 +5778,53 @@ a.historyComparePrevious span {
 }
 /* @end */
 /* @group Editing */
-/* @group Tabs */
-/* Color differences between the two tab types */
-#content ul.formTabs {
+ul.formTabs {
   background: transparent;
-  border: 0em solid #ddd;
+  margin-left: 0;
+  margin-bottom: 18px;
+  list-style: none;
+  *zoom: 1;
+  border-bottom: 1px solid #ddd;
 }
+ul.formTabs [class^="icon-"],
+ul.formTabs [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: .9em;
+}
+ul.formTabs:before,
+ul.formTabs:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+ul.formTabs:after {
+  clear: both;
+}
+ul.formTabs li {
+  float: left;
+  margin-bottom: -1px;
+}
+ul.formTabs li a {
+  padding: 8px 12px;
+  display: block;
+  line-height: 12px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+ul.formTabs li a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+ul.formTabs li a.selected {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+/* @group Tabs */
 #content-views {
   float: left;
   margin-top: 5px;
@@ -5747,96 +5843,23 @@ a.historyComparePrevious span {
   color: White;
 }
 /* Shared CSS between the two tab types */
-#content ul.formTabs,
-#content-core ul.formTabs {
-  display: block;
-  border-style: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-left: 0;
-  margin-bottom: 18px;
-  list-style: none;
-  *zoom: 1;
-  border-bottom: 1px solid #ddd;
-  background: transparent;
-}
-#content ul.formTabs [class^="icon-"],
-#content-core ul.formTabs [class^="icon-"],
-#content ul.formTabs [class*=" icon-"],
-#content-core ul.formTabs [class*=" icon-"] {
-  /* keeps button heights with and without icons the same */
-
-  line-height: .9em;
-}
-#content ul.formTabs:before,
-#content-core ul.formTabs:before,
-#content ul.formTabs:after,
-#content-core ul.formTabs:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-#content ul.formTabs:after,
-#content-core ul.formTabs:after {
-  clear: both;
-}
-#content ul.formTabs li > a,
-#content-core ul.formTabs li > a {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  line-height: 18px;
-  border: 1px solid transparent;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
-}
-#content ul.formTabs li > a:hover,
-#content-core ul.formTabs li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
-}
-#content ul.formTabs li.active > a,
-#content-core ul.formTabs li.active > a,
-#content ul.formTabs li.active > a:hover,
-#content-core ul.formTabs li.active > a:hover {
-  color: #555555;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
-  cursor: default;
-}
-#content li.formTab,
-#content-core li.formTab {
-  display: inline;
-  margin-right: 0.25em;
-}
-#content-views a,
-#content li.formTab a,
-#content-core li.formTab a {
+#content-views a {
   /* this isn't supported by all browsers, so we keep it in a separate rule */
 
   display: inline-block;
 }
-#content-views a,
-#content li.formTab a,
-#content-core li.formTab a {
+#content-views a {
   line-height: 2em;
   padding: 0 0.75em;
   text-decoration: none;
   border: none;
   margin: 0 ;
 }
-#content-views li.selected a,
-#content li.formTab a.selected,
-#content-core li.formTab a.selected {
+#content-views li.selected a {
   font-weight: bold;
 }
 #content-views li.selected a,
-#content-views li a:hover,
-#content li.formTab a.selected,
-#content li.formTab a:hover,
-#content-core li.formTab a.selected,
-#content-core li.formTab a:hover {
+#content-views li a:hover {
   background: White;
   color: Black;
   -webkit-border-radius: 4px;
@@ -5848,8 +5871,6 @@ a.historyComparePrevious span {
   background-color: red;
   color: White;
 }
-#content li.formTab a.required span:after,
-#content-core li.formTab a.required span:after,
 div.field span.required:after {
   content: "■";
   color: Red;
@@ -5903,12 +5924,12 @@ div.field span.required:after {
   z-index: 5;
 }
 #contentActionMenus dl.actionMenu.activated dd {
-  background-color: #f2f2f2;
+  background-color: #999999;
   color: White;
   z-index: 5;
 }
 #contentActionMenus dl.actionMenu.activated dd {
-  border-bottom: 0.5em solid #f2f2f2;
+  border-bottom: 0.5em solid #999999;
   right: -3px;
 }
 #contentActionMenus dl.actionMenu.activated dd a:hover,
@@ -5975,10 +5996,101 @@ dl.actionMenu.activated dd {
   -moz-border-radius-bottomright: 0.5em;
 }
 dl.actionMenu.activated dt a,
-dl.actionMenu.activated dd adl.actionMenu.activated dd div {
+dl.actionMenu.activated dd a,
+dl.actionMenu.activated dd div {
   margin: 0 0.25em;
 }
 /* @end */
+/* @group Data tables */
+table.listing,
+table.plain {
+  margin-bottom: 18px;
+}
+table.invisible td,
+table.invisible th,
+table.plain td,
+table.plain th,
+table.listing td,
+table.listing th {
+  padding: 0.5em 1em;
+  vertical-align: top;
+}
+table.listing td.listingCheckbox,
+table.listing th.listingCheckbox {
+  text-align: center;
+}
+table.listing {
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+table.listing .top {
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+table.listing th {
+  text-align: left;
+  color: #999999;
+  border: 0.1em solid #e7e7e7;
+  border-style: solid solid none;
+  background: #eeeeee;
+}
+table.listing tr.odd th {
+  border: 0.1em solid #fff;
+  border-style: solid solid none none;
+}
+table.listing tbody th {
+  font-weight: bold;
+}
+table.listing tbody tr {
+  text-align: left;
+}
+table.listing tbody tr.odd {
+  background: #eee;
+}
+table.listing tbody tr td {
+  background: transparent;
+}
+table.listing tbody tr.odd td {
+  background: #eee;
+}
+table.listing td {
+  border-right: 1px solid #ddd;
+}
+.icons-on table.listing td {
+  line-height: 2em;
+}
+table.listing a {
+  border: none;
+  display: inline-block;
+  border-bottom: none !important;
+}
+table.listing td.draggable {
+  text-shadow: White 1px 1px 1px;
+  background: #ddd !important;
+  border-bottom: 1px solid white;
+  padding: 0.4em 0.4em 0 0.5em;
+}
+/* Vertical table data listings */
+table.vertical th {
+  text-align: right;
+}
+table.vertical td {
+  border-top: 0.1em solid #e7e7e7;
+  padding: 0.5em;
+}
+/* Grid table listings */
+table.grid td,
+table.grid th {
+  border: 1px solid #e7e7e7;
+  padding: 0.5em;
+}
+.dragindicator {
+  outline: 2px solid #FFD700;
+}
+#foldercontents-order-column {
+  padding: 0;
+}
 /* @group Invisibles */
 .hiddenStructure {
   display: block;

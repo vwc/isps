@@ -1,5 +1,19 @@
 // Plone CMS UI styles
 
+// User portrait editbar
+
+.avatar {
+    margin-right: 2px;
+    line-height: @baseLineHeight;
+    border: 1px solid #ddd;
+    .border-radius(4px);
+    .box-shadow(0 1px 3px rgba(0,0,0,.055));
+    .transition(all .2s ease-in-out);
+    &.avatar-small {
+        .square(@baseFontSize);
+    }
+}
+
 // Basic content formatting
 
 .discreet {
@@ -9,7 +23,7 @@
 }
 
 .visualHighlight {
-    background-color: @white;
+    background-color: @yellow;
 }
 
 .pullquote {
@@ -23,11 +37,11 @@
     line-height: @baseLineHeight - 3;
     padding: @baseLineHeight / 2 @baseLineHeight;
     margin: @baseLineHeight 0 @baseLineHeight @baseLineHeight;
-    border-left: 5px solid @grayLighter;
-    background: @white;
+    border-left: 5px solid @grayLight;
+    background: @grayLighter;
 }
 .callout {
-    background: @white;
+    background: @grayLighter;
     padding: @baseLineHeight;
     margin: 0 0 @baseLineHeight;
     border-left: 5px solid @grayLight;
@@ -53,7 +67,7 @@ can both be on an image and a wrapper element e.g. a dl tag*/
 img.image-left,
 img.image-right,
 .captioned img {
-    border: 1px solid @white;
+    .thumbnail();
 }
 dd.image-caption {
     text-align: left;
@@ -112,17 +126,18 @@ input.standalone {
     }
 }
 
-
-
 /* Form overrides */
 
-input[type="checkbox"] + label {
+input[type="checkbox"] + label,
+.ArchetypesBooleanWidget label {
     display: inline-block;
     .ie7-inline-block();
-    margin-left: @baseLineHeight / 2;
+    margin-left: @baseLineHeight / 4;
 }
 
-input.datetime-widget {
+input.datetime-widget,
+.plone_jscalendar select,
+.ArchetypesCalendarWidget select {
     width: auto;
 }
 
@@ -174,6 +189,17 @@ span.required {
     display: inline-block;
 }
 
+/* Portal messages are styled like alerts */
+
+dl.portalMessage {
+    .alert();
+    dt {
+        margin: 0;
+    }
+    dd {
+        margin-left: 0px;
+    }
+}
 
 /* Pulldown menu state indicators */
 
@@ -260,46 +286,54 @@ div.overlay div.close {
 
 .pb-ajax .documentActions {display:none}
 
-div.overlay div.close span,
-div.overlay div.close a {
-    display: block;
-    height: 1px;
-    margin: -1px 0 0 -1px;
-    overflow: hidden;
-    padding: 0;
-    width: 1px;
-}
 
-div.overlay textarea { width: 100%; }
-
-/* Hide form elements that don't make sense within an overlay. */
-div.overlay .link-parent { display: none; }
-div.overlay #createGroup legend { display: none; }
-div.overlay #createGroup fieldset { border: none; }
-
-/* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
-div.overlay p {
-    margin-bottom: 1em;
-}
-div.overlay label {
-    margin-bottom: 0.25em;
-}
-div.overlay a:hover {
-    color: #75ad0a;
-}
-div.overlay a.selected {
-    color: #000000;
-}
-div.overlay .formTab {
-    margin-right:1em;
-    font-weight: bold;
-}
-div.overlay .formTab.lastFormTab {
-    margin-right:0em;
-}
-div.overlay .formControls a {
-    display: block;
-    margin: 0.75em;
+div.overlay {
+    div.close span,
+    div.close a {
+        display: block;
+        height: 1px;
+        margin: -1px 0 0 -1px;
+        overflow: hidden;
+        padding: 0;
+        width: 1px;
+    }
+    textarea {
+        width: 100%;
+    }
+    /* Hide form elements that don't make sense within an overlay. */
+    .link-parent {
+        display: none;
+    }
+    #createGroup {
+        legend,
+        fieldset {
+            display: none;
+        }
+    }
+    /* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
+    p {
+        margin-bottom: 1em;
+    }
+    label {
+        margin-bottom: 0.25em;
+    }
+    a:hover {
+        color: #75ad0a;
+    }
+    a.selected {
+        color: #000000;
+    }
+    .formTab {
+        margin-right:1em;
+        font-weight: bold;
+        &.lastFormTab {
+            margin-right:0em;
+        }
+    }
+    .formControls a {
+        display: block;
+        margin: 0.75em;
+    }
 }
 
 /* @end */
@@ -382,13 +416,37 @@ a.historyComparePrevious span {
 
 /* @group Editing */
 
+ul.formTabs {
+    background: transparent;
+    .nav();
+    .nav-tabs();
+    li {
+        float: left;
+        margin-bottom: -1px;
+        a {
+        padding: 8px 12px;
+        display: block;
+        line-height: @baseLineHeight - 6;
+        border: 1px solid transparent;
+        .border-radius(4px 4px 0 0);
+            &:hover {
+                border-color: @grayLighter @grayLighter #ddd;
+            }
+            &.selected {
+                color: @gray;
+                background-color: @white;
+                border: 1px solid #ddd;
+                border-bottom-color: transparent;
+                cursor: default;
+            }
+        }
+    }
+    
+}
+
+
 /* @group Tabs */
 
-/* Color differences between the two tab types */
-#content ul.formTabs {
-    background: transparent;
-    border: 0em solid #ddd;
-}
 #edit-bar {
 }
 #content-views {
@@ -410,67 +468,23 @@ a.historyComparePrevious span {
 }
 
 /* Shared CSS between the two tab types */
-#content ul.formTabs,
-#content-core ul.formTabs {
-    display: block;
-    border-style: none;
-    margin-left: 0;
-    .border-radius(4px);
-    .nav();
-    .nav-tabs();
-    background: transparent;
-    // Actual tabs (as links)
-    li > a {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      line-height: @baseLineHeight;
-      border: 1px solid transparent;
-      .border-radius(4px 4px 0 0);
-      &:hover {
-        border-color: @grayLighter @grayLighter #ddd;
-      }
-    }
-    // Active state, and it's :hover to override normal :hover
-    li.active > a,
-    li.active > a:hover {
-      color: @gray;
-      background-color: @white;
-      border: 1px solid #ddd;
-      border-bottom-color: transparent;
-      cursor: default;
-    }
-}
-#content li.formTab,
-#content-core li.formTab {
-    display: inline;
-    margin-right:0.25em;
-}
-#content-views a,
-#content li.formTab a,
-#content-core li.formTab a {
+
+#content-views a {
     /* this isn't supported by all browsers, so we keep it in a separate rule */
     display: inline-block;
 }
-#content-views a,
-#content li.formTab a,
-#content-core li.formTab a {
+#content-views a {
     line-height: 2em;
     padding: 0 0.75em;
     text-decoration: none;
     border: none;
     margin: 0 ;
 }
-#content-views li.selected a,
-#content li.formTab a.selected,
-#content-core li.formTab a.selected {
+#content-views li.selected a {
     font-weight: bold;
 }
 #content-views li.selected a,
-#content-views li a:hover,
-#content li.formTab a.selected,
-#content li.formTab a:hover,
-#content-core li.formTab a.selected,
-#content-core li.formTab a:hover {
+#content-views li a:hover {
     background: White;
     color: Black;
     .border-radius(4px);
@@ -480,8 +494,7 @@ a.historyComparePrevious span {
     background-color: red;
     color: White;
 }
-#content li.formTab a.required span:after, 
-#content-core li.formTab a.required span:after, 
+ 
 div.field span.required:after {
     content: "■";
     color: Red;
@@ -547,12 +560,12 @@ div.field span.required:after {
 }
 
 #contentActionMenus dl.actionMenu.activated dd {
-    background-color: @navbarBackground;
+    background-color: @grayLight;
     color: White;
     z-index: 5;
 }
 #contentActionMenus dl.actionMenu.activated dd {
-    border-bottom: 0.5em solid @navbarBackground;
+    border-bottom: 0.5em solid @grayLight;
     right: -3px;
 }
 #contentActionMenus dl.actionMenu.activated dd a:hover,
@@ -623,12 +636,118 @@ dl.actionMenu.activated dd {
     -moz-border-radius-bottomright: 0.5em;
 }
 dl.actionMenu.activated dt a,
-dl.actionMenu.activated dd a
+dl.actionMenu.activated dd a,
 dl.actionMenu.activated dd div {
     margin: 0 0.25em;
 }
 
 /* @end */
+
+
+/* @group Data tables */
+
+table.listing,
+table.plain {
+    margin-bottom: @baseLineHeight;
+}
+
+table.invisible td,
+table.invisible th,
+table.plain td,
+table.plain th,
+table.listing td,
+table.listing th {
+    padding: 0.5em 1em;
+    vertical-align: top;
+}
+table.plain th,
+table.plain td {
+    //border: 1px solid #ddd;
+}
+
+table.listing td.listingCheckbox,
+table.listing th.listingCheckbox {
+    text-align: center;
+}
+
+
+table.listing {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+table.listing .top {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+table.listing th {
+    text-align: left;
+    color: @grayLight;
+    border: 0.1em solid #e7e7e7;
+    border-style: solid solid none;
+    background: @grayLighter;
+}
+table.listing tr.odd th {
+    border: 0.1em solid #fff;
+    border-style: solid solid none none;
+}
+table.listing tbody th {
+    font-weight: bold;
+}
+table.listing tbody tr {
+    text-align:left;
+}
+table.listing tbody tr.odd {
+    background: #eee;
+}
+table.listing tbody tr td {
+    background: transparent;
+}
+table.listing tbody tr.odd td {
+    background: #eee;
+}
+table.listing td {
+    border-right: 1px solid #ddd;
+}
+.icons-on table.listing td {
+    line-height: 2em;
+}
+table.listing a {
+    border: none;
+    display: inline-block;
+    border-bottom: none !important;
+}
+
+table.listing td.draggable {
+    text-shadow: White 1px 1px 1px;
+    background: #ddd !important;
+    border-bottom: 1px solid white;
+    padding: 0.4em 0.4em 0 0.5em;
+}
+/* Vertical table data listings */
+table.vertical {
+}
+table.vertical th {
+    text-align: right;
+}
+table.vertical td {
+    border-top: 0.1em solid #e7e7e7;
+    padding: 0.5em;
+}
+/* Grid table listings */
+table.grid td,
+table.grid th {
+    border: 1px solid #e7e7e7;
+    padding: 0.5em;
+}
+
+.dragindicator {
+    outline: 2px solid #FFD700;
+}
+
+#foldercontents-order-column {
+    padding: 0;
+}
 
 /* @group Invisibles */
 
