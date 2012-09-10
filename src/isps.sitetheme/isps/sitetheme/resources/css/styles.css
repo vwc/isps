@@ -6351,11 +6351,14 @@ header.main-nav #pathbar {
 #content .page-header {
   margin-bottom: 0;
 }
+#content .page-header h1 {
+  color: #999999;
+}
 #content li {
   list-style-type: none;
 }
 #content ul {
-  margin: 0 0 9px 9px;
+  margin: 0 0 9px 0;
 }
 #content li:before {
   font-family: FontAwesome;

@@ -94,7 +94,6 @@ class GalleryView(grok.View):
         results = catalog(object_provides=IATBlobImage.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1))
-        resultlist = IContentListing(results)
         return results
 
     def image_list(self):
