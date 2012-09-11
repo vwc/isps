@@ -6328,6 +6328,16 @@ header.main-nav #pathbar {
 }
 .tile {
   margin-bottom: 27px;
+  *zoom: 1;
+}
+.tile:before,
+.tile:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.tile:after {
+  clear: both;
 }
 .tile h2 {
   line-height: 28px;
