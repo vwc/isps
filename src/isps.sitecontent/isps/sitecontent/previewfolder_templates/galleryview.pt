@@ -25,8 +25,11 @@
         <div>
           <tal:thumbs tal:repeat="cell row">
             <tal:thumb tal:define="item cell/item">
-              <img class="img-polaroid prettyPhoto"
+              <img class="img-polaroid team-image"
                 tal:attributes="src python:item['thumb_url'];
+                                alt item/title;
+                                data-original-title item/title;
+                                data-placement string:top;
                                 width item/thumb_width;
                                 height item/thumb_height;
                                 data-image-url item/original_url;
