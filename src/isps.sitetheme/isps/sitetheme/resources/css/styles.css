@@ -6291,11 +6291,13 @@ header.main-nav #pathbar {
 #main-nav .megamenu .navitem.active a:hover {
   text-decoration: underline;
 }
-#main-nav li:hover a.megamenu-toggle {
+#main-nav li:hover a.megamenu-toggle,
+#main-nav li.sfHover a.megamenu-toggle {
   color: #c76745;
   position: relative;
 }
-#main-nav li:hover ul.megamenu {
+#main-nav li:hover ul.megamenu,
+#main-nav li.sfHover ul.megamenu {
   display: block;
 }
 #frontpage-content {

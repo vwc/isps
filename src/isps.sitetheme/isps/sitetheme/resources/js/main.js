@@ -9,6 +9,12 @@
             // enhancement.
             return;
         }
+        $('#main-nav').superfish({
+            delay: 1000,
+            animation: {opacity: 'show', height: 'show'},
+            speed: 'slow',
+            autoArrows: false
+        });
         $(".bannertabs").tabs('.bannerbar > div.banner', {
             effect: 'fade',
             fadeOutSpeed: 1000,
