@@ -26,7 +26,9 @@
             clickable: false
         });
         $('#infotabs').tabs('div.infopanes > div.infopane', {
-            tabs: 'li.infotab'
+            tabs: 'li.infotab',
+            event: 'mouseover',
+            effect: 'fade'
         });
         $('#project-gallery').scrollable().navigator();
         $("#project-gallery .items img").on('click', function () {
