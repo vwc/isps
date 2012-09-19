@@ -27,8 +27,8 @@
         });
         $('#infotabs').tabs('div.infopanes > div.infopane', {
             tabs: 'li.infotab',
-            event: 'mouseover',
-            effect: 'fade'
+            //event: 'mouseover',
+            //effect: 'fade'
         });
         $('#project-gallery').scrollable().navigator();
         $("#project-gallery .items img").on('click', function () {
