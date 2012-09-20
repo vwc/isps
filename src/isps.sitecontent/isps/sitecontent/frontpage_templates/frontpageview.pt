@@ -63,49 +63,49 @@
         tal:define="pstate context/@@plone_portal_state;
                     portal_url pstate/portal_url">
         <div class="span6 infopanes">
-          <div class="infopane">
+          <div class="infopane" id="infopane-1">
             <h2>Beraten</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well1" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-2">
             <h2>Planen</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well2" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-3">
             <h2>Pr&uuml;fen</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well3" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-4">
             <h2>Betreuen</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well4" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-5">
             <h2>Entwickeln</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well5" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-6">
             <h2>Steuern</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well6" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-7">
             <h2>&Uuml;berwachen</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well7" />
             </div>
           </div>
-          <div class="infopane">
+          <div class="infopane" id="infopane-8">
             <h2>Begutachten</h2>
             <div class="infopane-content">
               <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well8" />
@@ -116,31 +116,76 @@
           <h2>Unsere Leistungen</h2>
           <ul id="infotabs">
             <li class="infotab pull-left">
-              <a href="" tal:attributes="href python:portal_url + '/leistungen/beraten'">
-                <div class="infoicon icon1"></div>
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-1"
+                tal:attributes="href python:portal_url + '/leistungen/beraten'">
+                <span class="infoicon icon1"></span>
                 <h5>Beraten</h5>
               </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon2"></div>
-              <h5>Planen</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-2"
+                tal:attributes="href python:portal_url + '/leistungen/planen'">
+                <span class="infoicon icon2"></span>
+                <h5>Planen</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon3"></div>
-              <h5>Pr&uuml;fen</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-3"
+                tal:attributes="href python:portal_url + '/leistungen/pruefen'">
+                <span class="infoicon icon3"></span>
+                <h5>Pr&uuml;fen</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon4"></div>
-              <h5>Betreuen</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-4"
+                tal:attributes="href python:portal_url + '/leistungen/betreuen'">
+                <span class="infoicon icon4"></span>
+                <h5>Betreuen</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon5"></div>
-              <h5>Entwickeln</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-5"
+                tal:attributes="href python:portal_url + '/leistungen/entwickeln'">
+                <span class="infoicon icon5"></span>
+                <h5>Entwickeln</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon6"></div>
-              <h5>Steuern</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-6"
+                tal:attributes="href python:portal_url + '/leistungen/steuern'">
+                <span class="infoicon icon6"></span>
+                <h5>Steuern</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon7"></div>
-              <h5>&Uuml;berwachen</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-7"
+                tal:attributes="href python:portal_url + '/leistungen/ueberwachen'">
+                <span class="infoicon icon7"></span>
+                <h5>&Uuml;berwachen</h5>
+              </a>
             </li>
-            <li class="infotab pull-left"><div class="infoicon icon8"></div>
-              <h5>Begutachten</h5>
+            <li class="infotab pull-left">
+              <a href=""
+                data-appui="infotabs"
+                data-target="#infopane-3"
+                tal:attributes="href python:portal_url + '/leistungen/begutachten'">
+                <span class="infoicon icon8"></span>
+                <h5>Begutachten</h5>
+              </a>
             </li>
           </ul>
         </div>

@@ -25,10 +25,15 @@
             interval: 6000,
             clickable: false
         });
-        $('#infotabs').tabs('div.infopanes > div.infopane', {
-            tabs: 'li.infotab',
-            //event: 'mouseover',
-            //effect: 'fade'
+        var infotabs = $('div.infopane').hide();
+        var current = $('#infopane-1').fadeIn('slow');
+        $('a[data-appui="infotabs"]').on('hover', function () {
+            var target = $(this).data('target');
+            current = $(target);
+            infotabs.not(current).fadeOut('fast');
+            infotabs.promise().done(function () {
+                current.fadeIn('slow');
+            });
         });
         $('#project-gallery').scrollable().navigator();
         $("#project-gallery .items img").on('click', function () {

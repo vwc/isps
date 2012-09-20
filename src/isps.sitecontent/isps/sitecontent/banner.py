@@ -33,6 +33,7 @@ class IBanner(form.Schema, IImageScaleTraversable):
         source=ObjPathSourceBinder(object_provides=IProject.__identifier__),
         required=False,
     )
+    form.widget(information=AutocompleteFieldWidget)
     information = RelationChoice(
         title=_(u"Related content"),
         description=_(u"Select related content. When a link to related "
