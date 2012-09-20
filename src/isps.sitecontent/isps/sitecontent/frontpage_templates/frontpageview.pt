@@ -34,7 +34,7 @@
                   <h3 tal:content="item/Title" />
                   <hr />
                   <p tal:content="item/Description" />
-                  <div class="banner-more">
+                  <div class="banner-more" tal:condition="item_obj/project">
                     <a href="" tal:condition="item_obj/project"
                       tal:attributes="href item_obj/project/to_object/absolute_url">
                       Mehr</a>
@@ -59,7 +59,9 @@
   </section>
 
   <section class="container" id="frontpage-tabs">
-      <div class="row-fluid">
+      <div class="row-fluid"
+        tal:define="pstate context/@@plone_portal_state;
+                    portal_url pstate/portal_url">
         <div class="span6 infopanes">
           <div class="infopane">
             <h2>Beraten</h2>
@@ -113,8 +115,11 @@
         <div class="span6">
           <h2>Unsere Leistungen</h2>
           <ul id="infotabs">
-            <li class="infotab pull-left"><div class="infoicon icon1"></div>
-              <h5>Beraten</h5>
+            <li class="infotab pull-left">
+              <a href="" tal:attributes="href python:portal_url + '/leistungen/beraten'">
+                <div class="infoicon icon1"></div>
+                <h5>Beraten</h5>
+              </a>
             </li>
             <li class="infotab pull-left"><div class="infoicon icon2"></div>
               <h5>Planen</h5>

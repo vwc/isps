@@ -16,11 +16,6 @@
     <p class="lead" tal:condition="context/Description"
       tal:content="context/Description" />
 
-    <div class="well">
-      <h4>Banner Overlay Text</h4>
-      <div tal:content="structure context/text/output" />
-    </div>
-
     <img tal:define="scales context/@@images"
       tal:replace="structure python: scales.tag('image', scale='mini')"
       />
