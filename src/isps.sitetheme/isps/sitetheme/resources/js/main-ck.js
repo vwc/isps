@@ -2,12 +2,12 @@
     e(document).ready(function() {
         if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 7) return;
         e("#main-nav").superfish({
-            delay: 1e3,
+            delay: 500,
             animation: {
                 opacity: "show",
                 height: "show"
             },
-            speed: "slow",
+            speed: "fast",
             autoArrows: !1
         });
         e("img.team-image").popover();

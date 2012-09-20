@@ -10,9 +10,9 @@
             return;
         }
         $('#main-nav').superfish({
-            delay: 1000,
+            delay: 500,
             animation: {opacity: 'show', height: 'show'},
-            speed: 'slow',
+            speed: 'fast',
             autoArrows: false
         });
         $('img.team-image').popover();
