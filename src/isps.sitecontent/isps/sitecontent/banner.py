@@ -4,10 +4,11 @@ from plone.directives import dexterity, form
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedBlobImage
 
+from plone.formwidget.autocomplete import AutocompleteFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from Products.CMFCore.interfaces import IContentish
+from isps.sitecontent.contentpage import IContentPage
 from isps.sitecontent.project import IProject
 
 from isps.sitecontent import MessageFactory as _
@@ -25,6 +26,7 @@ class IBanner(form.Schema, IImageScaleTraversable):
                       u"correct dimensions"),
         required=True,
     )
+    form.widget(project=AutocompleteFieldWidget)
     project = RelationChoice(
         title=_(u"Project"),
         description=_(u"Select related project for the banner link"),
@@ -36,7 +38,8 @@ class IBanner(form.Schema, IImageScaleTraversable):
         description=_(u"Select related content. When a link to related "
                       u"content is available any selection for related "
                       u"projects will be ignored"),
-        source=ObjPathSourceBinder(object_provides=IContentish.__identifier__),
+        source=ObjPathSourceBinder(
+            object_provides=IContentPage.__identifier__),
         required=False,
     )
 
