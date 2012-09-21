@@ -181,7 +181,7 @@
             <li class="infotab pull-left">
               <a href=""
                 data-appui="infotabs"
-                data-target="#infopane-3"
+                data-target="#infopane-8"
                 tal:attributes="href python:portal_url + '/leistungen/begutachten'">
                 <span class="infoicon icon8"></span>
                 <h5>Begutachten</h5>
