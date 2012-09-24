@@ -20,7 +20,7 @@
       tal:content="context/description" />
     
     <tal:full tal:condition="python:full == True">
-      <div class="tile" tal:repeat="item view/construct_full_listing">
+      <div class="tile media" tal:repeat="item view/construct_full_listing">
         <tal:image tal:define="item_obj item/getObject"
           tal:condition="item_obj/image">
           <div class="image-left">
@@ -29,16 +29,18 @@
               tal:replace="structure python: scales.scale('image', scale='mini').tag()" />
           </div>
         </tal:image>
+        <div class="media-body">
         <h2 tal:content="item/Title" />
         <p tal:condition="item/Description" tal:content="item/Description" />
         <p><a href="" tal:attributes="href item/getURL">
           Mehr &raquo;</a></p>
+        </div>
       </div>
     </tal:full>
 
     <tal:notfull tal:condition="python:full != True">
       <tal:folders tal:condition="view/has_subfolders">
-        <div class="tile" tal:repeat="item view/subfolders">
+        <div class="tile media" tal:repeat="item view/subfolders">
           <tal:image tal:define="item_obj item/getObject"
             tal:condition="item_obj/image">
             <div class="image-left">
@@ -47,17 +49,19 @@
                 tal:replace="structure python: scales.scale('image', scale='mini').tag()" />
             </div>
           </tal:image>
+          <div class="media-body">
           <h2 tal:content="item/Title" />
           <p tal:condition="item/Description" tal:content="item/Description" />
           <p><a href="" tal:attributes="href item/getURL">
             Mehr &raquo;</a></p>
+          </div>
         </div>
       </tal:folders>
   
       <tal:subcontent tal:condition="not:view/has_subfolders">
       <tal:items tal:define="items view/contained_items;
                              toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <div class="tile" tal:repeat="item items">
+        <div class="tile media" tal:repeat="item items">
           <div tal:condition="item/image" class="image-left">
             <a href="" tal:attributes="href item/getURL">
               <img class="img-polaroid"
@@ -67,10 +71,12 @@
                 tal:replace="structure python:scales.scale('image', scale='mini').tag()" />
             </a>
           </div>
+          <div class="media-body">
             <h2 tal:content="item/Title" />
             <p tal:condition="item/Description" tal:content="item/Description" />
             <p><a href="" tal:attributes="href item/getURL">
               Mehr &raquo;</a></p>
+          </div>
         </div>
       </tal:items>
       </tal:subcontent>
