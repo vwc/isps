@@ -26,7 +26,7 @@ class IPreviewFolder(form.Schema, IImageScaleTraversable):
     image = NamedBlobImage(
         title=_(u"Preview Image"),
         description=_(u"Upload preview image that will be displayed inside "
-                       "the dropdown menu"),
+                      u"the dropdown menu"),
         required=False,
     )
     hide_children = schema.Bool(
@@ -64,6 +64,7 @@ class View(grok.View):
                                        'isps.sitecontent.contentpage'],
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
+                          sort_on='getObjPositionInParent',
                           review_state='published')
         resultlist = IContentListing(results)
         return resultlist
@@ -80,6 +81,7 @@ class View(grok.View):
         results = catalog(object_provides=IProject.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
+                          sort_on='getObjPositionInParent',
                           review_state='published')
         resultlist = IContentListing(results)
         return resultlist
@@ -90,6 +92,7 @@ class View(grok.View):
         results = catalog(object_provides=IContentPage.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
+                          sort_on='getObjPositionInParent',
                           review_state='published')
         resultlist = IContentListing(results)
         return resultlist
@@ -100,6 +103,7 @@ class View(grok.View):
         results = catalog(object_provides=IPreviewFolder.__identifier__,
                           path=dict(query='/'.join(context.getPhysicalPath()),
                                     depth=1),
+                          sort_on='getObjPositionInParent',
                           review_state='published')
         resultlist = IContentListing(results)
         return resultlist
