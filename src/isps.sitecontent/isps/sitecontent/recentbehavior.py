@@ -1,3 +1,4 @@
+from DateTime import DateTime
 from five import grok
 from zope import schema
 from zope.interface import Interface
@@ -7,6 +8,9 @@ from plone.autoform.interfaces import IFormFieldProvider
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
 from Products.Five.utilities.marker import mark, erase
+
+from plone.indexer.interfaces import IIndexer
+from Products.ZCatalog.interfaces import IZCatalog
 
 from isps.sitecontent.contentpage import IContentPage
 from isps.sitecontent.project import IProject
@@ -46,7 +50,7 @@ alsoProvides(IRecentEventBehavior, IFormFieldProvider)
 @grok.subscribe(IContentPage, IObjectModifiedEvent)
 def applyRecentMarker(obj, event):
     recent = obj.recent
-    if recent == True:
+    if recent is True:
         mark(obj, IRecentMarker)
     else:
         erase(obj, IRecentMarker)
@@ -56,8 +60,25 @@ def applyRecentMarker(obj, event):
 @grok.subscribe(IProject, IObjectModifiedEvent)
 def applyRecentProjectMarker(obj, event):
     recent = obj.recent
-    if recent == True:
+    if recent is True:
         mark(obj, IRecentMarker)
     else:
         erase(obj, IRecentMarker)
     obj.reindexObject(idxs=['object_provides'])
+
+
+class ReviewersIndexer(grok.MultiAdapter):
+    """Catalog indexer for the 'reviewers' index.
+    """
+    grok.implements(IIndexer)
+    grok.adapts(IRecentMarker, IZCatalog)
+    grok.name('release_date')
+
+    def __init__(self, context, catalog):
+        self.recentitems = IRecentEventBehavior(context)
+
+    def __call__(self):
+        released = self.recentitems.release_date
+        if released is None:
+            return None
+        return DateTime(released.isoformat())

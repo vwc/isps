@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isps.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+  <section tal:define="full context/full_listing">
+    <div class="page-header">
+      <h1 class="documentFirstHeading"
+        tal:content="context/Title">Title inserted here</h1>
+    </div>
+
+    <p class="lead documentDescription"
+      tal:condition="context/Description"
+      tal:content="context/description" />
+    
+    <tal:block tal:condition="view/has_items">
+      <div class="tile media" tal:repeat="item view/collect_items">
+        <tal:image tal:define="item_obj item/getObject"
+          tal:condition="item_obj/image">
+          <div class="image-left">
+            <img class="image-left img-polaroid"
+              tal:define="scales item_obj/@@images"
+              tal:replace="structure python: scales.scale('image', scale='mini').tag()" />
+          </div>
+        </tal:image>
+        <div class="media-body">
+        <h2 tal:content="item/Title" />
+        <p tal:condition="item/Description" tal:content="item/Description" />
+        <p><a href="" tal:attributes="href item/getURL">
+          Mehr &raquo;</a></p>
+        </div>
+      </div>
+    </tal:block>
+  </section>
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

@@ -175,3 +175,24 @@ class GalleryView(grok.View):
             item['width'] = scale.width
             item['height'] = scale.height
         return item
+
+
+class RecentView(grok.View):
+    grok.context(IPreviewFolder)
+    grok.require('zope2.View')
+    grok.name('recent-view')
+
+    def update(self):
+        self.has_items = len(self.collect_items()) > 0
+
+    def collect_items(self):
+        context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
+        results = catalog(object_provides=IContentPage.__identifier__,
+                          path=dict(query='/'.join(context.getPhysicalPath()),
+                                    depth=1),
+                          sort_on='release_date',
+                          sort_order='reverse',
+                          review_state='published')
+        resultlist = IContentListing(results)
+        return resultlist

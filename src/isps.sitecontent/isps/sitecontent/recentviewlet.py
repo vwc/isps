@@ -22,6 +22,8 @@ class RecentViewlet(grok.Viewlet):
         context = aq_inner(self.context)
         catalog = getToolByName(context, 'portal_catalog')
         brains = catalog(object_provides=IRecentMarker.__identifier__,
-                          review_state='published')
+                          review_state='published',
+                          sort_on='release_date',
+                          sort_order='reverse')
         results = IContentListing(brains)
         return results
