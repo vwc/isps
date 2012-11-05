@@ -315,14 +315,17 @@ header.main-nav {
         padding: @baseLineHeight / 2 @baseLineHeight;
         ul {
             margin: 0 0 9px 0;
+            position: relative;
             li {
-                margin-left: 0px;
+                margin-left: 9px;
                 list-style: none;
                 &:before {
                     font-family: FontAwesome;
                     font-weight: normal;
                     font-style: normal;
                     display: inline-block;
+                    position:absolute;
+                    left: 0px;  
                     text-decoration: inherit;
                     width: .8em;
                     content: "\f0da";
@@ -363,6 +366,7 @@ h1.documentFirstHeading {
     }
     ul {
         margin: 0 0 9px 0;
+        position:relative;
         li {
             margin-left: @baseLineHeight / 2;
         }
@@ -371,7 +375,9 @@ h1.documentFirstHeading {
         font-family: FontAwesome;
         font-weight: normal;
         font-style: normal;
-        display: inline-block;
+        display: block;
+        position:absolute;
+        left: 0px;
         text-decoration: inherit;
         width: .8em;
         content: "\f0da";

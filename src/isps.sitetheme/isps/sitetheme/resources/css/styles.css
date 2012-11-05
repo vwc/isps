@@ -6063,7 +6063,7 @@ ul.formTabs li:before {
   text-decoration: inherit;
   width: 0em !important;
   content: "" !important;
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '');
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '') !important;
 }
 /* @group Tabs */
 #content-views {
@@ -6700,9 +6700,10 @@ header.main-nav #pathbar {
 }
 #project-details .info-box ul {
   margin: 0 0 9px 0;
+  position: relative;
 }
 #project-details .info-box ul li {
-  margin-left: 0px;
+  margin-left: 9px;
   list-style: none;
 }
 #project-details .info-box ul li:before {
@@ -6710,6 +6711,8 @@ header.main-nav #pathbar {
   font-weight: normal;
   font-style: normal;
   display: inline-block;
+  position: absolute;
+  left: 0px;
   text-decoration: inherit;
   width: .8em;
   content: "\f0da";
@@ -6740,6 +6743,7 @@ h1.documentFirstHeading {
 }
 #content-core ul {
   margin: 0 0 9px 0;
+  position: relative;
 }
 #content-core ul li {
   margin-left: 9px;
@@ -6748,7 +6752,9 @@ h1.documentFirstHeading {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
-  display: inline-block;
+  display: block;
+  position: absolute;
+  left: 0px;
   text-decoration: inherit;
   width: .8em;
   content: "\f0da";
