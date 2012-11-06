@@ -6058,6 +6058,13 @@ ul.formTabs li a.selected {
   border-bottom-color: transparent;
   cursor: default;
 }
+ul.formTabs li:before {
+  display: inline !important;
+  text-decoration: inherit;
+  width: 0em !important;
+  content: "" !important;
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '') !important;
+}
 /* @group Tabs */
 #content-views {
   float: left;
@@ -6691,6 +6698,68 @@ header.main-nav #pathbar {
   border-bottom: 1px solid #555555;
   padding: 9px 18px;
 }
+#project-details .info-box ul {
+  margin: 0 0 9px 0;
+  position: relative;
+}
+#project-details .info-box ul li {
+  margin-left: 9px;
+  list-style: none;
+}
+#project-details .info-box ul li:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  text-decoration: inherit;
+  width: .8em;
+  content: "\f0da";
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0da;&nbsp;');
+}
+#content .page-header {
+  margin-bottom: 0;
+}
+#content .page-header h1 {
+  color: #999999;
+}
+h1.documentFirstHeading,
+h2,
+h3 {
+  color: #999999;
+}
+h1.documentFirstHeading {
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+#content-core h2,
+#content-core h3 {
+  line-height: 18px;
+}
+#content-core li {
+  list-style-type: none;
+}
+#content-core ul {
+  margin: 0 0 9px 0;
+  position: relative;
+}
+#content-core ul li {
+  margin-left: 9px;
+}
+#content-core li:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: block;
+  position: absolute;
+  left: 0px;
+  text-decoration: inherit;
+  width: .8em;
+  content: "\f0da";
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0da;&nbsp;');
+}
 #sidebar {
   border-left: 1px solid #555555;
 }
@@ -6714,42 +6783,6 @@ header.main-nav #pathbar {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 9px;
-}
-#content .page-header {
-  margin-bottom: 0;
-}
-#content .page-header h1 {
-  color: #999999;
-}
-#content li {
-  list-style-type: none;
-}
-#content ul {
-  margin: 0 0 9px 0;
-}
-#content li:before {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  text-decoration: inherit;
-  width: .8em;
-  content: "\f0da";
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0da;&nbsp;');
-}
-h1.documentFirstHeading,
-h2,
-h3 {
-  color: #999999;
-}
-h1.documentFirstHeading {
-  font-size: 24px;
-  line-height: 36px;
-  text-transform: uppercase;
-}
-#content-core h2,
-#content-core h3 {
-  line-height: 18px;
 }
 /* Collapsible elements in search_form */
 .collapsible .collapser.collapsed {
@@ -7087,6 +7120,9 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 #infotabs .infotab.current h5,
 #infotabs .infotab:hover h5 {
   color: #c76745;
+}
+.named-image-widget label {
+  display: inline-block;
 }
 #portal-footer {
   margin-top: 18px;

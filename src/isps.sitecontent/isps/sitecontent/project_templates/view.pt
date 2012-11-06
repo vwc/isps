@@ -55,7 +55,8 @@
         <div class="navi"></div>
       </div>
 
-      <div tal:condition="context/text"
+      <div id="content-core"
+        tal:condition="context/text"
         tal:content="structure context/text/output" />
     </article>
     <aside class="span4">
