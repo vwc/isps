@@ -113,13 +113,13 @@
           </div>
         </div>
         <div class="span6">
-          <h2>Unsere Leistungen</h2>
+          <h2>Unsere Kompetenzen</h2>
           <ul id="infotabs">
             <li class="infotab pull-left">
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-1"
-                tal:attributes="href python:portal_url + '/leistungen/beraten'">
+                tal:attributes="href python:portal_url + '/kompetenzen/beraten'">
                 <span class="infoicon icon1"></span>
                 <h5>Beraten</h5>
               </a>
@@ -128,7 +128,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-2"
-                tal:attributes="href python:portal_url + '/leistungen/planen'">
+                tal:attributes="href python:portal_url + '/kompetenzen/planen'">
                 <span class="infoicon icon2"></span>
                 <h5>Planen</h5>
               </a>
@@ -137,7 +137,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-3"
-                tal:attributes="href python:portal_url + '/leistungen/pruefen'">
+                tal:attributes="href python:portal_url + '/kompetenzen/pruefen'">
                 <span class="infoicon icon3"></span>
                 <h5>Pr&uuml;fen</h5>
               </a>
@@ -146,7 +146,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-4"
-                tal:attributes="href python:portal_url + '/leistungen/betreuen'">
+                tal:attributes="href python:portal_url + '/kompetenzen/betreuen'">
                 <span class="infoicon icon4"></span>
                 <h5>Betreuen</h5>
               </a>
@@ -155,7 +155,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-5"
-                tal:attributes="href python:portal_url + '/leistungen/entwickeln'">
+                tal:attributes="href python:portal_url + '/kompetenzen/entwickeln'">
                 <span class="infoicon icon5"></span>
                 <h5>Entwickeln</h5>
               </a>
@@ -164,7 +164,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-6"
-                tal:attributes="href python:portal_url + '/leistungen/steuern'">
+                tal:attributes="href python:portal_url + '/kompetenzen/steuern'">
                 <span class="infoicon icon6"></span>
                 <h5>Steuern</h5>
               </a>
@@ -173,7 +173,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-7"
-                tal:attributes="href python:portal_url + '/leistungen/ueberwachen'">
+                tal:attributes="href python:portal_url + '/kompetenzen/ueberwachen'">
                 <span class="infoicon icon7"></span>
                 <h5>&Uuml;berwachen</h5>
               </a>
@@ -182,7 +182,7 @@
               <a href=""
                 data-appui="infotabs"
                 data-target="#infopane-8"
-                tal:attributes="href python:portal_url + '/leistungen/begutachten'">
+                tal:attributes="href python:portal_url + '/kompetenzen/begutachten'">
                 <span class="infoicon icon8"></span>
                 <h5>Begutachten</h5>
               </a>
