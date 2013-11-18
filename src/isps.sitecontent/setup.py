@@ -26,7 +26,7 @@ setup(name='isps.sitecontent',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity',
+          'plone.app.dexterity [grok, relations]',
           'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-
       ],
@@ -38,7 +38,4 @@ setup(name='isps.sitecontent',
       # The next two lines may be deleted after you no longer need
       # addcontent support from paster and before you distribute
       # your package.
-      setup_requires=["PasteScript"],
-      paster_plugins = ["ZopeSkel"],
-
       )
