@@ -9,15 +9,13 @@ body {
 }
 
 #toolbar {
-    .navbar-inner {
-      min-height: @navbarHeight;
-      padding-left:  20px;
-      padding-right: 20px;
-      #gradient > .vertical(darken(@white, 5%), @white);
-      border: 1px solid darken(@white, 12%);
-      .border-radius(0px);
-      .box-shadow(0 1px 4px rgba(0,0,0,.065));
-    }
+    min-height: @navbarHeight;
+    padding-left:  20px;
+    padding-right: 20px;
+    #gradient > .vertical(darken(@white, 5%), @white);
+    border: 1px solid darken(@white, 12%);
+    .border-radius(0px);
+    .box-shadow(0 1px 4px rgba(0,0,0,.065));
     .nav li.dropdown > .dropdown-toggle .caret {
       border-top-color: @gray;
       border-bottom-color: @gray;
