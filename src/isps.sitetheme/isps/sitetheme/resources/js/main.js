@@ -58,7 +58,7 @@
         $("a.popoverLogin").prepOverlay(
         {
             subtype: 'ajax',
-            filter: common_content_filter,
+            filter: '#content>*',
             formselector: 'form#login_form',
             noform: 'redirect',
             redirect: function (overlay, responseText) {
