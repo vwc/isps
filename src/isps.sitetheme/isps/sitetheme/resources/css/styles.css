@@ -6912,6 +6912,10 @@ h1.documentFirstHeading {
   content: "\f0da";
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0da;&nbsp;');
 }
+.modal-wrapper ul > li:before {
+  display: none !important;
+  width: auto !important;
+}
 #sidebar {
   border-left: 1px solid #555555;
 }
