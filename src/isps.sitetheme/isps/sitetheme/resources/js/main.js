@@ -15,7 +15,9 @@
             speed: 'fast',
             autoArrows: false
         });
-        $('img.team-image').popover();
+        $('img.team-image').popover({
+            trigger: 'hover'
+        });
         $(".bannertabs").tabs('.bannerbar > div.banner', {
             effect: 'fade',
             fadeOutSpeed: 1000,
