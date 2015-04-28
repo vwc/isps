@@ -8,6 +8,7 @@
     <theme href="frontpage.html" css:if-content="body.template-frontpage-view" />
     <theme href="fullscreen.html" css:if-content="body.section-projekte" />
     <theme href="fullscreen.html" css:if-content="body.template-search" />
+    <theme href="aktuelles.html" css:if-content="body.section-aktuelles-1" />
     
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">

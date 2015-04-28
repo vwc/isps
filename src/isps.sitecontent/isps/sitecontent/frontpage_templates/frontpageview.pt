@@ -62,57 +62,6 @@
       <div class="row-fluid"
         tal:define="pstate context/@@plone_portal_state;
                     portal_url pstate/portal_url">
-        <div class="span6 infopanes">
-          <div class="infopane" id="infopane-1">
-            <h2>Beraten</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well1" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-2">
-            <h2>Planen</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well2" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-3">
-            <h2>Pr&uuml;fen</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well3" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-4">
-            <h2>Betreuen</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well4" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-5">
-            <h2>Entwickeln</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well5" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-6">
-            <h2>Steuern</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well6" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-7">
-            <h2>&Uuml;berwachen</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well7" />
-            </div>
-          </div>
-          <div class="infopane" id="infopane-8">
-            <h2>Begutachten</h2>
-            <div class="infopane-content">
-              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well8" />
-            </div>
-          </div>
-        </div>
-        <div class="span6">
           <h2>Unsere Kompetenzen</h2>
           <ul id="infotabs">
             <li class="infotab pull-left">
@@ -188,6 +137,67 @@
               </a>
             </li>
           </ul>
+      </div>
+      <div class="row-fluid"
+        tal:define="pstate context/@@plone_portal_state;
+                    portal_url pstate/portal_url">
+        <div class="span6 infopanes">
+          <div class="infopane" id="infopane-1">
+            <h2>Beraten</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well1" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-2">
+            <h2>Planen</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well2" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-3">
+            <h2>Pr&uuml;fen</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well3" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-4">
+            <h2>Betreuen</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well4" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-5">
+            <h2>Entwickeln</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well5" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-6">
+            <h2>Steuern</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well6" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-7">
+            <h2>&Uuml;berwachen</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well7" />
+            </div>
+          </div>
+          <div class="infopane" id="infopane-8">
+            <h2>Begutachten</h2>
+            <div class="infopane-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/well8" />
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <div class="tile">
+            <h2>Aktuelles</h2>
+            <div class="meldung-content">
+              <div tal:attributes="data-tile string:${context/absolute_url}/@@vwc.tiles.richtext/meldung1" />
+            </div>
+          </div>    
         </div>
       </div>
     </section>
