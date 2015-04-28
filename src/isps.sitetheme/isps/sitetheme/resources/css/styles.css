@@ -6721,6 +6721,13 @@ header.main-nav #pathbar {
   font-weight: normal;
   text-transform: uppercase;
 }
+
+.section-projekte .tile {
+    float: left;
+    height: 15rem;
+    width: 50%;
+}
+
 .tile {
   margin-bottom: 27px;
   *zoom: 1;
@@ -7094,7 +7101,7 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
   padding: 27px 0px;
 }
 #contact-bar {
-  position: absolute;
+  position: fixed;
   top: 300px;
   right: 0px;
 }
