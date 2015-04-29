@@ -6728,6 +6728,57 @@ header.main-nav #pathbar {
     width: 50%;
 }
 
+.subsection-forschung .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-schulen .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-kultur .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-bauen-mit-bestand .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-wohnen .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-wohnen-1 .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-verwaltung .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-sonderbauten .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-verkehrsbauwerke .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+.subsection-bauwerkspruefung-1 .tile {
+  float: none;
+  height: auto;
+  width: 100%;
+}
+
 .tile {
   margin-bottom: 27px;
   *zoom: 1;
